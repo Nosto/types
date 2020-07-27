@@ -1,5 +1,5 @@
 {
-  "name": "types",
+  "name": "@nosto/types",
   "version": "0.0.1",
   "description": "Nosto Types",
   "types": "./src/types.d.ts",
@@ -12,5 +12,8 @@
     "npm": "^6.14.4",
     "prettier": "^2.0.5",
     "quicktype": "^15.0.249"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
