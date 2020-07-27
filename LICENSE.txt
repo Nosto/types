@@ -1,2 +1,0 @@
-/*! nosto-shopify-snippet
- *  License: Copyright (c) 2019 Nosto Solutions Ltd. All Rights Reserved. */
