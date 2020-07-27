@@ -1,0 +1,1 @@
+{"type":"object","properties":{"external_order_ref":{"type":"string"},"payment_provider":{"type":"string"},"created_at":{"type":"array"},"order_status_code":{"type":"string"},"order_status_description":{"type":"string"},"purchased_items":{"type":"array"}}}
