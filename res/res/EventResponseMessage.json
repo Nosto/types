@@ -1,0 +1,567 @@
+{
+  "type" : "object",
+  "id" : "urn:jsonschema:com:nosto:activesession:messages:EventResponseMessage",
+  "properties" : {
+    "customer" : {
+      "type" : "string"
+    },
+    "visit" : {
+      "type" : "string"
+    },
+    "errors" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "js" : {
+      "type" : "string"
+    },
+    "debug" : {
+      "type" : "object",
+      "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:DebugToolbarDataDTO",
+      "properties" : {
+        "segments" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:SegmentDebugDTO",
+            "properties" : {
+              "id" : {
+                "type" : "string"
+              },
+              "name" : {
+                "type" : "string"
+              },
+              "forced" : {
+                "type" : "boolean"
+              },
+              "active" : {
+                "type" : "boolean"
+              }
+            }
+          }
+        },
+        "placements" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:PlacementDebugDTO",
+            "properties" : {
+              "id" : {
+                "type" : "string"
+              },
+              "divId" : {
+                "type" : "string"
+              },
+              "enabled" : {
+                "type" : "boolean"
+              },
+              "name" : {
+                "type" : "string"
+              },
+              "rules" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:PlacementDebugDTO:PlacementRuleDTO",
+                  "properties" : {
+                    "to" : {
+                      "type" : "any"
+                    },
+                    "segment" : {
+                      "type" : "any"
+                    },
+                    "feature" : {
+                      "type" : "string",
+                      "enum" : [ "RECOMMENDATION", "CONTENT_DELIVERY", "POPUP", "SPLIT_TESTING", "SCHEDULING" ]
+                    }
+                  }
+                }
+              },
+              "activeRule" : {
+                "type" : "object",
+                "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:SegmentRuleDebugDTO",
+                "properties" : {
+                  "segment" : {
+                    "type" : "any"
+                  },
+                  "to" : {
+                    "type" : "any"
+                  },
+                  "type" : {
+                    "type" : "string",
+                    "enum" : [ "RECOMMENDATION", "ONSITE_CONTENT", "AB_TEST", "HIDE_CONTENT" ]
+                  },
+                  "test" : {
+                    "type" : "object",
+                    "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:TestDebugDTO",
+                    "properties" : {
+                      "id" : {
+                        "type" : "any"
+                      },
+                      "variation" : {
+                        "type" : "string"
+                      }
+                    }
+                  },
+                  "draft" : {
+                    "type" : "object",
+                    "$ref" : "urn:jsonschema:com:nosto:activesession:messages:debug:TestDebugDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "recommendationCampaigns" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "id" : "urn:jsonschema:com:nosto:onsite:recommendation:RecommendationDebugDTO",
+            "properties" : {
+              "id" : {
+                "type" : "any"
+              },
+              "recoId" : {
+                "type" : "string"
+              },
+              "title" : {
+                "type" : "string"
+              },
+              "link" : {
+                "type" : "string"
+              },
+              "enabled" : {
+                "type" : "boolean"
+              },
+              "filtered" : {
+                "type" : "boolean"
+              },
+              "ittt" : {
+                "type" : "boolean"
+              },
+              "variant" : {
+                "type" : "boolean"
+              },
+              "rendered" : {
+                "type" : "boolean"
+              },
+              "fbTitle" : {
+                "type" : "string"
+              },
+              "fbLink" : {
+                "type" : "string"
+              },
+              "fbType" : {
+                "type" : "string"
+              },
+              "divIds" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              },
+              "resultType" : {
+                "type" : "string"
+              },
+              "productIds" : {
+                "type" : "object",
+                "additional_properties" : {
+                  "type" : "string"
+                }
+              },
+              "type" : {
+                "type" : "string"
+              },
+              "divId" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "contentCampaigns" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "id" : "urn:jsonschema:com:nosto:onsite:content:ContentDebugDTO",
+            "properties" : {
+              "id" : {
+                "type" : "any"
+              },
+              "divIds" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              },
+              "enabled" : {
+                "type" : "boolean"
+              },
+              "rendered" : {
+                "type" : "boolean"
+              },
+              "name" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "runningTests" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "id" : "urn:jsonschema:com:nosto:experiments:split:preview:AbTestPreviewSettingsDTO",
+            "properties" : {
+              "id" : {
+                "type" : "any"
+              },
+              "name" : {
+                "type" : "string"
+              },
+              "segment" : {
+                "type" : "any"
+              },
+              "method" : {
+                "type" : "string",
+                "enum" : [ "SPLIT_TEST", "MVT" ]
+              },
+              "variations" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "id" : "urn:jsonschema:com:nosto:experiments:split:preview:AbTestVariationDTO",
+                  "properties" : {
+                    "id" : {
+                      "type" : "string"
+                    },
+                    "name" : {
+                      "type" : "string"
+                    },
+                    "base" : {
+                      "type" : "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "draftTests" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "id" : "urn:jsonschema:com:nosto:experiments:split:preview:AbTestDraftPreviewSettingsDTO",
+            "properties" : {
+              "id" : {
+                "type" : "any"
+              },
+              "name" : {
+                "type" : "string"
+              },
+              "segment" : {
+                "type" : "any"
+              },
+              "method" : {
+                "type" : "string",
+                "enum" : [ "SPLIT_TEST", "MVT" ]
+              },
+              "variations" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "$ref" : "urn:jsonschema:com:nosto:experiments:split:preview:AbTestVariationDTO"
+                }
+              }
+            }
+          }
+        },
+        "popupPreviewSettings" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "id" : "urn:jsonschema:com:nosto:onsite:popup:PopupUtils:PopupCampaignPreviewSettingsDTO",
+            "properties" : {
+              "enabled" : {
+                "type" : "boolean"
+              },
+              "popup_id" : {
+                "type" : "string"
+              },
+              "campaign_id" : {
+                "type" : "string"
+              },
+              "type" : {
+                "type" : "string"
+              },
+              "condition" : {
+                "type" : "object",
+                "id" : "urn:jsonschema:com:nosto:onsite:popup:PopupUtils:ConditionDTO",
+                "properties" : {
+                  "categories" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "exc_categories" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "brands" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "exc_brands" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "tags" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "exc_tags" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "urls" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "exc_urls" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "url_parameters" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "exc_url_parameters" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "min_cart_value" : {
+                    "type" : "number"
+                  },
+                  "min_cart_size" : {
+                    "type" : "integer"
+                  },
+                  "max_cart_value" : {
+                    "type" : "number"
+                  },
+                  "max_cart_size" : {
+                    "type" : "integer"
+                  },
+                  "min_page_views" : {
+                    "type" : "integer"
+                  },
+                  "max_page_views" : {
+                    "type" : "integer"
+                  },
+                  "locations" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "string"
+                      }
+                    }
+                  },
+                  "exc_locations" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "string"
+                      }
+                    }
+                  },
+                  "page_types" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string",
+                      "enum" : [ "front", "category", "product", "cart", "search", "notfound", "order", "other", "checkout" ]
+                    }
+                  },
+                  "exc_page_types" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string",
+                      "enum" : [ "front", "category", "product", "cart", "search", "notfound", "order", "other", "checkout" ]
+                    }
+                  },
+                  "hide_on_desktop" : {
+                    "type" : "boolean"
+                  },
+                  "hide_on_mobile" : {
+                    "type" : "boolean"
+                  },
+                  "advanced" : {
+                    "type" : "boolean"
+                  },
+                  "referer_urls" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "exc_referer_urls" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "loggedIn" : {
+          "type" : "boolean"
+        },
+        "dev" : {
+          "type" : "boolean"
+        },
+        "showTestsTab" : {
+          "type" : "boolean"
+        },
+        "showImprovedCampaignOverlayData" : {
+          "type" : "boolean"
+        },
+        "richSegmentsTab" : {
+          "type" : "boolean"
+        },
+        "placementsTab" : {
+          "type" : "boolean"
+        },
+        "schedulesTab" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "recommendations" : {
+      "type" : "object",
+      "additional_properties" : {
+        "type" : "any"
+      }
+    },
+    "nc" : {
+      "type" : "boolean"
+    },
+    "hiic" : {
+      "type" : "boolean"
+    },
+    "he" : {
+      "type" : "boolean"
+    },
+    "ct" : {
+      "type" : "number"
+    },
+    "cs" : {
+      "type" : "integer"
+    },
+    "cdc" : {
+      "type" : "string"
+    },
+    "pv" : {
+      "type" : "integer"
+    },
+    "gl" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "cpr" : {
+      "type" : "string"
+    },
+    "ed" : {
+      "type" : "integer",
+      "format" : "utc-millisec"
+    },
+    "af" : {
+      "type" : "object",
+      "id" : "urn:jsonschema:com:nosto:visit:CustomerAffinityResponse",
+      "properties" : {
+        "top_brands" : {
+          "type" : "object",
+          "additional_properties" : {
+            "type" : "number"
+          }
+        },
+        "top_categories" : {
+          "type" : "object",
+          "additional_properties" : {
+            "type" : "number"
+          }
+        }
+      }
+    },
+    "cmpid" : {
+      "type" : "string"
+    },
+    "fb" : {
+      "type" : "object",
+      "id" : "urn:jsonschema:com:nosto:ads:facebook:tracking:model:FacebookData",
+      "properties" : {
+        "p" : {
+          "type" : "string"
+        },
+        "a" : {
+          "type" : "string"
+        },
+        "s" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "e" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "id" : "urn:jsonschema:com:nosto:ads:facebook:tracking:model:AbstractFacebookPixelEvent<java:lang:Object>",
+            "properties" : {
+              "n" : {
+                "type" : "string"
+              },
+              "d" : {
+                "type" : "any"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ga" : {
+      "type" : "object",
+      "id" : "urn:jsonschema:com:nosto:ads:google:GoogleAnalyticsData",
+      "properties" : {
+        "s" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}

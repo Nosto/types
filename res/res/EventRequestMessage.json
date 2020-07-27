@@ -1,0 +1,246 @@
+{
+  "type" : "object",
+  "id" : "urn:jsonschema:com:nosto:activesession:messages:EventRequestMessage",
+  "properties" : {
+    "referrer" : {
+      "type" : "string"
+    },
+    "url" : {
+      "type" : "string"
+    },
+    "elements" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "debug" : {
+      "type" : "object",
+      "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:DebugRequestParamsDTO",
+      "properties" : {
+        "test_previews" : {
+          "type" : "object",
+          "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:TestPreviewsDTO",
+          "properties" : {
+            "t" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:ForcedTestDTO",
+                "properties" : {
+                  "id" : {
+                    "type" : "any"
+                  },
+                  "variation" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            },
+            "d" : {
+              "type" : "object",
+              "id" : "urn:jsonschema:com:nosto:activesession:messages:debug:ForcedTestDTO",
+              "properties" : {
+                "id" : {
+                  "type" : "any"
+                },
+                "variation" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "u" : {
+              "type" : "object",
+              "id" : "urn:jsonschema:com:nosto:experiments:split:preview:UnsavedDraftPreviewSettingsDTO",
+              "properties" : {
+                "id" : {
+                  "type" : "any"
+                },
+                "name" : {
+                  "type" : "string"
+                },
+                "segment" : {
+                  "type" : "any"
+                },
+                "method" : {
+                  "type" : "string",
+                  "enum" : [ "SPLIT_TEST", "MVT" ]
+                },
+                "variations" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "id" : "urn:jsonschema:com:nosto:experiments:split:preview:VariationWithRulesDTO",
+                    "properties" : {
+                      "id" : {
+                        "type" : "string"
+                      },
+                      "name" : {
+                        "type" : "string"
+                      },
+                      "base" : {
+                        "type" : "boolean"
+                      },
+                      "rules" : {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "object",
+                          "id" : "urn:jsonschema:com:nosto:experiments:split:preview:TestPlacementRuleDTO",
+                          "properties" : {
+                            "placement" : {
+                              "type" : "any"
+                            },
+                            "segment" : {
+                              "type" : "any"
+                            },
+                            "to" : {
+                              "type" : "any"
+                            },
+                            "feature" : {
+                              "type" : "string",
+                              "enum" : [ "RECOMMENDATION", "CONTENT_DELIVERY", "POPUP", "SPLIT_TESTING", "SCHEDULING" ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "forced_segments" : {
+          "type" : "array",
+          "items" : {
+            "type" : "any"
+          }
+        },
+        "serving_time" : {
+          "type" : "number"
+        }
+      }
+    },
+    "segment_codes" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "show_cart_popup_recommendations" : {
+      "type" : "boolean"
+    },
+    "page_type" : {
+      "type" : "string",
+      "enum" : [ "front", "category", "product", "cart", "search", "notfound", "order", "other", "checkout" ]
+    },
+    "sort_order" : {
+      "type" : "string"
+    },
+    "categories" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "category_ids" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "tags" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "mail_ref" : {
+      "type" : "string"
+    },
+    "mail_type" : {
+      "type" : "string"
+    },
+    "reference" : {
+      "type" : "string"
+    },
+    "external_visit_reference" : {
+      "type" : "string"
+    },
+    "debug_code" : {
+      "type" : "integer"
+    },
+    "recotrace" : {
+      "type" : "string"
+    },
+    "render_mode" : {
+      "type" : "string",
+      "enum" : [ "HTML", "SIMPLE", "JSON_170x170", "JSON_100_X_100", "JSON_90x70", "JSON_50x50", "JSON_30x30", "JSON_100x140", "JSON_200x200", "JSON_400x400", "JSON_750x750", "JSON_10_MAX_SQUARE", "JSON_200x200_SQUARE", "JSON_400x400_SQUARE", "JSON_750x750_SQUARE", "JSON_ORIGINAL" ]
+    },
+    "preview" : {
+      "type" : "boolean"
+    },
+    "channel" : {
+      "type" : "string",
+      "enum" : [ "BROWSER", "API", "GRAPHQL" ]
+    },
+    "events" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "id" : "urn:jsonschema:com:nosto:activesession:messages:RawEvent",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "target" : {
+            "type" : "string"
+          },
+          "ref" : {
+            "type" : "string"
+          },
+          "refSrc" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "order_confirmation_page" : {
+      "type" : "boolean"
+    },
+    "date" : {
+      "type" : "integer",
+      "format" : "utc-millisec"
+    },
+    "cart_cookie_hash" : {
+      "type" : "string"
+    },
+    "current_variant" : {
+      "type" : "string"
+    },
+    "customer_reference" : {
+      "type" : "string"
+    },
+    "allow_caching" : {
+      "type" : "boolean"
+    },
+    "cart_product_ids" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "cart_product_skus" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "cart_total_size" : {
+      "type" : "integer"
+    },
+    "cart_total_price" : {
+      "type" : "number"
+    }
+  }
+}

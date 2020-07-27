@@ -1,0 +1,51 @@
+{
+  "type" : "object",
+  "id" : "urn:jsonschema:com:nosto:orders:WebsiteOrder",
+  "properties" : {
+    "external_order_ref" : {
+      "type" : "string"
+    },
+    "payment_provider" : {
+      "type" : "string"
+    },
+    "created_at" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "order_status_code" : {
+      "type" : "string"
+    },
+    "order_status_description" : {
+      "type" : "string"
+    },
+    "purchased_items" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "id" : "urn:jsonschema:com:nosto:orders:ConversionItem",
+        "properties" : {
+          "product_id" : {
+            "type" : "string"
+          },
+          "sku_id" : {
+            "type" : "string"
+          },
+          "quantity" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "unit_price" : {
+            "type" : "number"
+          },
+          "price_currency_code" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
