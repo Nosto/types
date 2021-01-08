@@ -1,939 +1,716 @@
-export interface Res {
-    type:       string;
-    id:         string;
-    properties: ResProperties;
-}
-
-export interface ResProperties {
-    referrer?:                        AgeGroup;
-    url?:                             AgeGroup;
-    elements?:                        Elements;
-    debug?:                           Debug;
-    segment_codes?:                   SegmentCodes;
-    show_cart_popup_recommendations?: AgeGroup;
-    page_type?:                       PageType;
-    sort_order?:                      AgeGroup;
-    categories?:                      PurpleCategories;
-    category_ids?:                    CategoryIDS;
-    tags?:                            FluffyTags;
-    mail_ref?:                        AgeGroup;
-    mail_type?:                       AgeGroup;
-    reference?:                       AgeGroup;
-    external_visit_reference?:        AgeGroup;
-    debug_code?:                      AgeGroup;
-    recotrace?:                       AgeGroup;
-    render_mode?:                     RenderMode;
-    preview?:                         AgeGroup;
-    channel?:                         Channel;
-    events?:                          Events;
-    order_confirmation_page?:         AgeGroup;
-    date?:                            DateClass;
-    cart_cookie_hash?:                AgeGroup;
-    current_variant?:                 AgeGroup;
-    customer_reference?:              AgeGroup;
-    allow_caching?:                   AgeGroup;
-    cart_product_ids?:                CartProductIDS;
-    cart_product_skus?:               CartProductSkus;
-    cart_total_size?:                 AgeGroup;
-    cart_total_price?:                AgeGroup;
-    cart?:                            Cart;
-    customer?:                        Customer;
-    experiments?:                     Experiments;
-    coupon_campaign?:                 AgeGroup;
-    coupon_code?:                     AgeGroup;
-    coupon_used?:                     AgeGroup;
-    restore_link?:                    AgeGroup;
-    customer_cookie_hash?:            AgeGroup;
-    visit?:                           AgeGroup;
-    errors?:                          Errors;
-    js?:                              AgeGroup;
-    recommendations?:                 Recommendations;
-    nc?:                              AgeGroup;
-    hiic?:                            AgeGroup;
-    he?:                              AgeGroup;
-    ct?:                              AgeGroup;
-    cs?:                              AgeGroup;
-    cdc?:                             AgeGroup;
-    pv?:                              AgeGroup;
-    gl?:                              Gl;
-    cpr?:                             AgeGroup;
-    ed?:                              DateClass;
-    af?:                              AF;
-    cmpid?:                           AgeGroup;
-    fb?:                              Fb;
-    ga?:                              Ga;
-    date_published?:                  DateClass;
-    product_id?:                      AgeGroup;
-    name?:                            AgeGroup;
-    image_url?:                       AgeGroup;
-    thumb_url?:                       AgeGroup;
-    supplier_cost?:                   AgeGroup;
-    inventory_level?:                 AgeGroup;
-    review_count?:                    AgeGroup;
-    rating_value?:                    AgeGroup;
-    alternate_image_urls?:            AlternateImageUrls;
-    condition?:                       AgeGroup;
-    gender?:                          AgeGroup;
-    age_group?:                       AgeGroup;
-    gtin?:                            AgeGroup;
-    google_category?:                 AgeGroup;
-    unit_pricing_measure?:            AgeGroup;
-    unit_pricing_base_measure?:       AgeGroup;
-    unit_pricing_unit?:               AgeGroup;
-    price?:                           AgeGroup;
-    price_currency_code?:             AgeGroup;
-    availability?:                    AgeGroup;
-    category?:                        Category;
-    list_price?:                      AgeGroup;
-    brand?:                           AgeGroup;
-    tags1?:                           Tags1;
-    tags2?:                           Tags2;
-    tags3?:                           Tags3;
-    custom_fields?:                   PurpleCustomFields;
-    variation_id?:                    AgeGroup;
-    skus?:                            Skus;
-    description?:                     AgeGroup;
-    partial_variants?:                PartialVariants;
-    external_order_ref?:              AgeGroup;
-    payment_provider?:                AgeGroup;
-    created_at?:                      CreatedAt;
-    order_status_code?:               AgeGroup;
-    order_status_description?:        AgeGroup;
-    purchased_items?:                 PurchasedItems;
-}
-
-export interface AF {
-    type:       string;
-    id:         string;
-    properties: AFProperties;
-}
-
-export interface AFProperties {
-    top_brands:     TopBrands;
-    top_categories: TopCategories;
-}
-
-export interface TopBrands {
-    type:                  string;
-    additional_properties: AgeGroup;
-}
-
-export interface AgeGroup {
-    type: string;
-}
-
-export interface TopCategories {
-    type:                  string;
-    additional_properties: AgeGroup;
-}
-
-export interface AlternateImageUrls {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface Cart {
-    type:  string;
-    items: CartItems;
-}
-
-export interface CartItems {
-    type:       string;
-    id:         string;
-    properties: PurpleProperties;
-}
-
-export interface PurpleProperties {
-    product_id:          AgeGroup;
-    sku_id:              AgeGroup;
-    quantity:            AgeGroup;
-    name:                AgeGroup;
-    unit_price:          AgeGroup;
-    price_currency_code: AgeGroup;
-}
-
-export interface CartProductIDS {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface CartProductSkus {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface PurpleCategories {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface Category {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface CategoryIDS {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface Channel {
-    type: string;
-    enum: string[];
-}
-
-export interface CreatedAt {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface PurpleCustomFields {
-    type:                  string;
-    additional_properties: AgeGroup;
-}
-
-export interface Customer {
-    type:        string;
-    id?:         string;
-    properties?: CustomerProperties;
-}
-
-export interface CustomerProperties {
-    customer_reference: AgeGroup;
-    email:              AgeGroup;
-    first_name:         AgeGroup;
-    last_name:          AgeGroup;
-    order_number:       AgeGroup;
-    newsletter:         AgeGroup;
-    source:             AgeGroup;
-    source_id:          AgeGroup;
-    type:               AgeGroup;
-}
-
-export interface DateClass {
-    type:   string;
-    format: string;
-}
-
-export interface Debug {
-    type:       string;
-    id:         string;
-    properties: DebugProperties;
-}
-
-export interface DebugProperties {
-    test_previews?:                   TestPreviews;
-    forced_segments?:                 ForcedSegments;
-    serving_time?:                    AgeGroup;
-    segments?:                        Segments;
-    placements?:                      Placements;
-    recommendationCampaigns?:         RecommendationCampaigns;
-    contentCampaigns?:                ContentCampaigns;
-    runningTests?:                    RunningTests;
-    draftTests?:                      DraftTests;
-    popupPreviewSettings?:            PopupPreviewSettings;
-    loggedIn?:                        AgeGroup;
-    dev?:                             AgeGroup;
-    showTestsTab?:                    AgeGroup;
-    showImprovedCampaignOverlayData?: AgeGroup;
-    richSegmentsTab?:                 AgeGroup;
-    placementsTab?:                   AgeGroup;
-    schedulesTab?:                    AgeGroup;
-}
-
-export interface ContentCampaigns {
-    type:  string;
-    items: ContentCampaignsItems;
-}
-
-export interface ContentCampaignsItems {
-    type:       string;
-    id:         string;
-    properties: FluffyProperties;
-}
-
-export interface FluffyProperties {
-    id:       AgeGroup;
-    divIds:   PurpleDivIDS;
-    enabled:  AgeGroup;
-    rendered: AgeGroup;
-    name:     AgeGroup;
-}
-
-export interface PurpleDivIDS {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface DraftTests {
-    type:  string;
-    items: DraftTestsItems;
-}
-
-export interface DraftTestsItems {
-    type:       string;
-    id:         string;
-    properties: TentacledProperties;
-}
-
-export interface TentacledProperties {
-    id:         AgeGroup;
-    name:       AgeGroup;
-    segment:    AgeGroup;
-    method:     PurpleMethod;
-    variations: PurpleVariations;
-}
-
-export interface PurpleMethod {
-    type: string;
-    enum: string[];
-}
-
-export interface PurpleVariations {
-    type:  string;
-    items: DraftClass;
-}
-
-export interface DraftClass {
-    type: string;
-    $ref: string;
-}
-
-export interface ForcedSegments {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface Placements {
-    type:  string;
-    items: PlacementsItems;
-}
-
-export interface PlacementsItems {
-    type:       string;
-    id:         string;
-    properties: StickyProperties;
-}
-
-export interface StickyProperties {
-    id:         AgeGroup;
-    divId:      AgeGroup;
-    enabled:    AgeGroup;
-    name:       AgeGroup;
-    rules:      PurpleRules;
-    activeRule: ActiveRule;
-}
-
-export interface ActiveRule {
-    type:       string;
-    id:         string;
-    properties: ActiveRuleProperties;
-}
-
-export interface ActiveRuleProperties {
-    segment: AgeGroup;
-    to:      AgeGroup;
-    type:    Type;
-    test:    Test;
-    draft:   DraftClass;
-}
-
-export interface Test {
-    type:       string;
-    id:         string;
-    properties: TestProperties;
-}
-
-export interface TestProperties {
-    id:        AgeGroup;
-    variation: AgeGroup;
-}
-
-export interface Type {
-    type: string;
-    enum: string[];
-}
-
-export interface PurpleRules {
-    type:  string;
-    items: PurpleItems;
-}
-
-export interface PurpleItems {
-    type:       string;
-    id:         string;
-    properties: IndigoProperties;
-}
-
-export interface IndigoProperties {
-    to:      AgeGroup;
-    segment: AgeGroup;
-    feature: PurpleFeature;
-}
-
-export interface PurpleFeature {
-    type: string;
-    enum: string[];
-}
-
-export interface PopupPreviewSettings {
-    type:  string;
-    items: PopupPreviewSettingsItems;
-}
-
-export interface PopupPreviewSettingsItems {
-    type:       string;
-    id:         string;
-    properties: IndecentProperties;
-}
-
-export interface IndecentProperties {
-    enabled:     AgeGroup;
-    popup_id:    AgeGroup;
-    campaign_id: AgeGroup;
-    type:        AgeGroup;
-    condition:   Condition;
-}
-
-export interface Condition {
-    type:       string;
-    id:         string;
-    properties: ConditionProperties;
-}
-
-export interface ConditionProperties {
-    categories:         FluffyCategories;
-    exc_categories:     ExcCategories;
-    brands:             Brands;
-    exc_brands:         ExcBrands;
-    tags:               PurpleTags;
-    exc_tags:           ExcTags;
-    urls:               Urls;
-    exc_urls:           ExcUrls;
-    url_parameters:     URLParameters;
-    exc_url_parameters: ExcURLParameters;
-    min_cart_value:     AgeGroup;
-    min_cart_size:      AgeGroup;
-    max_cart_value:     AgeGroup;
-    max_cart_size:      AgeGroup;
-    min_page_views:     AgeGroup;
-    max_page_views:     AgeGroup;
-    locations:          Locations;
-    exc_locations:      ExcLocations;
-    page_types:         PageTypes;
-    exc_page_types:     ExcPageTypes;
-    hide_on_desktop:    AgeGroup;
-    hide_on_mobile:     AgeGroup;
-    advanced:           AgeGroup;
-    referer_urls:       RefererUrls;
-    exc_referer_urls:   ExcRefererUrls;
-}
-
-export interface Brands {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface FluffyCategories {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface ExcBrands {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface ExcCategories {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface ExcLocations {
-    type:  string;
-    items: ExcLocationsItems;
-}
-
-export interface ExcLocationsItems {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface ExcPageTypes {
-    type:  string;
-    items: ExcPageTypesItems;
-}
-
-export interface ExcPageTypesItems {
-    type: string;
-    enum: string[];
-}
-
-export interface ExcRefererUrls {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface ExcTags {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface ExcURLParameters {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface ExcUrls {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface Locations {
-    type:  string;
-    items: LocationsItems;
-}
-
-export interface LocationsItems {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface PageTypes {
-    type:  string;
-    items: PageTypesItems;
-}
-
-export interface PageTypesItems {
-    type: string;
-    enum: string[];
-}
-
-export interface RefererUrls {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface PurpleTags {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface URLParameters {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface Urls {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface RecommendationCampaigns {
-    type:  string;
-    items: RecommendationCampaignsItems;
-}
-
-export interface RecommendationCampaignsItems {
-    type:       string;
-    id:         string;
-    properties: HilariousProperties;
-}
-
-export interface HilariousProperties {
-    id:         AgeGroup;
-    recoId:     AgeGroup;
-    title:      AgeGroup;
-    link:       AgeGroup;
-    enabled:    AgeGroup;
-    filtered:   AgeGroup;
-    ittt:       AgeGroup;
-    variant:    AgeGroup;
-    rendered:   AgeGroup;
-    fbTitle:    AgeGroup;
-    fbLink:     AgeGroup;
-    fbType:     AgeGroup;
-    divIds:     FluffyDivIDS;
-    resultType: AgeGroup;
-    productIds: ProductIDS;
-    type:       AgeGroup;
-    divId:      AgeGroup;
-}
-
-export interface FluffyDivIDS {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface ProductIDS {
-    type:                  string;
-    additional_properties: AgeGroup;
-}
-
-export interface RunningTests {
-    type:  string;
-    items: RunningTestsItems;
-}
-
-export interface RunningTestsItems {
-    type:       string;
-    id:         string;
-    properties: AmbitiousProperties;
-}
-
-export interface AmbitiousProperties {
-    id:         AgeGroup;
-    name:       AgeGroup;
-    segment:    AgeGroup;
-    method:     FluffyMethod;
-    variations: FluffyVariations;
-}
-
-export interface FluffyMethod {
-    type: string;
-    enum: string[];
-}
-
-export interface FluffyVariations {
-    type:  string;
-    items: FluffyItems;
-}
-
-export interface FluffyItems {
-    type:       string;
-    id:         string;
-    properties: CunningProperties;
-}
+/* tslint:disable */
+/* eslint-disable */
+// Generated using typescript-generator version 2.27.744 on 2020-12-16 15:51:22.
 
-export interface CunningProperties {
-    id:   AgeGroup;
-    name: AgeGroup;
-    base: AgeGroup;
+interface AbTestDraftPreviewSettingsDTO extends AbTestPreviewSettingsBase<AbTestVariationDTO> {
+    variations: AbTestVariationDTO[];
 }
 
-export interface Segments {
-    type:  string;
-    items: SegmentsItems;
+interface AbTestPreviewSettingsBase<T> {
+    id: TestId;
+    method: Method;
+    name: string;
+    segment: SegmentId;
+    variations: T[];
 }
 
-export interface SegmentsItems {
-    type:       string;
-    id:         string;
-    properties: MagentaProperties;
+interface AbTestPreviewSettingsDTO extends AbTestPreviewSettingsBase<AbTestVariationDTO> {
+    variations: AbTestVariationDTO[];
 }
 
-export interface MagentaProperties {
-    id:     AgeGroup;
-    name:   AgeGroup;
-    forced: AgeGroup;
-    active: AgeGroup;
+interface AbTestVariation {
+    base: boolean;
+    id: string;
+    name: string;
 }
 
-export interface TestPreviews {
-    type:       string;
-    id:         string;
-    properties: TestPreviewsProperties;
+interface AbTestVariationDTO extends AbTestVariation {
 }
 
-export interface TestPreviewsProperties {
-    t: T;
+interface AbstractFacebookPixelEvent<D> {
     d: D;
-    u: U;
+    n: string;
 }
 
-export interface D {
-    type:       string;
-    id:         string;
-    properties: DProperties;
+interface CampaignId<T> extends NostoIdentifierObjectId<T> {
+    feature: OnsiteFeature;
 }
 
-export interface DProperties {
-    id:        AgeGroup;
-    variation: AgeGroup;
+interface CartItem extends Serializable, CartItemFields {
 }
 
-export interface T {
-    type:  string;
-    items: TItems;
+interface CartItemFields {
+    name: string;
+    priceCurrencyCode: string;
+    productId: string;
+    quantity: number;
+    skuId: string;
+    unitPrice: number;
 }
 
-export interface TItems {
-    type:       string;
-    id:         string;
-    properties: FriskyProperties;
+interface ClientScriptSettingsDTO extends PublicJacksonBean {
+    account: string;
+    addToCartPopup: boolean;
+    anyDomain: boolean;
+    browserQueueActive: boolean;
+    cmpMode: string;
+    collectEmailFromURL: boolean;
+    cookieTime: number;
+    debugRedirectUrl: string;
+    defaultCurrencyCode: string;
+    defaultVariantId: string;
+    discountPopupTriggers: { [index: string]: PopupTriggerSettingsDTO[] };
+    discountPopupVisible: boolean;
+    emailAddressUrlParamName: string;
+    exchangeRates: boolean;
+    extraHosts: string[];
+    fullTaggingRequired: boolean;
+    jsErrorUrl: string;
+    live: boolean;
+    nostoRefParam: string;
+    pageTypeFiltersForUntaggedPages: boolean;
+    partnerRecommendationEndpoint: string;
+    placements: { [index: string]: DynamicPlacementDTO };
+    popupRibbonUrlFilter: boolean;
+    recoveryPopupEnabled: boolean;
+    searchQueryParam: string;
+    secureCookie: boolean;
+    segmentUrlParameters: string[];
+    sendTaggingOnlyIfNeeded: boolean;
+    sentryDsn: string;
+    server: string;
+    shopifyCmpRedirect: boolean;
+    site: string;
+    subDomain: string;
+    subscribeWebSocketChannel: boolean;
+    trackingTypes: string[];
+    triggerAddToCartPopupWithCookie: boolean;
+    websocketEndPoint: string;
 }
 
-export interface FriskyProperties {
-    id:        AgeGroup;
-    variation: AgeGroup;
+interface Comparable<T> {
 }
 
-export interface U {
-    type:       string;
-    id:         string;
-    properties: UProperties;
+interface ConditionDTO {
+    advanced: boolean;
+    brands: string[];
+    categories: string[];
+    excBrands: string[];
+    excCategories: string[];
+    excLocations: string[][];
+    excPageTypes: PageType[];
+    excRefererUrls: string[];
+    excTags: string[];
+    excUrlParameters: string[];
+    excUrls: string[];
+    hideOnDesktop: boolean;
+    hideOnMobile: boolean;
+    locations: string[][];
+    maxCartSize: number;
+    maxCartValue: number;
+    maxPageViews: number;
+    minCartSize: number;
+    minCartValue: number;
+    minPageViews: number;
+    pageTypes: PageType[];
+    refererUrls: string[];
+    tags: string[];
+    treatUrlConditionsAsFilters: boolean;
+    urlParameters: string[];
+    urls: string[];
 }
 
-export interface UProperties {
-    id:         AgeGroup;
-    name:       AgeGroup;
-    segment:    AgeGroup;
-    method:     TentacledMethod;
-    variations: TentacledVariations;
+interface ContentDebugDTO {
+    divIds: string[];
+    enabled: boolean;
+    id: ContentId;
+    name: string;
+    rendered: boolean;
 }
 
-export interface TentacledMethod {
+interface ContentId extends CampaignId<ContentId> {
+}
+
+interface ConversionItem extends PublicJacksonBean, CartItemFields {
+    price_currency_code: string;
+    product_id: string;
+    sku_id: string;
+    unit_price: number;
+}
+
+interface CustomerAffinityResponse extends PublicJacksonBean {
+    top_brands: CustomerAffinityResponseItem[];
+    top_categories: CustomerAffinityResponseItem[];
+}
+
+interface CustomerAffinityResponseItem extends JacksonBean {
+    name: string;
+    score: number;
+}
+
+interface CustomerDTO extends PublicJacksonBean {
+    first_name: string;
+    id: string;
+    last_name: string;
+    marketing_permission: boolean;
+    ref: string;
+}
+
+interface CustomerData {
+    customerReference?: string;
+    email?: string;
+    firstName?: string;
+    lastName?: string;
+    newsletter?: boolean;
+}
+
+interface DebugRequestParamsDTO {
+    at?: Date;
+    ep: boolean;
+    fs: SegmentId[];
+    tp?: TestPreviewsDTO;
+}
+
+interface DebugToolbarDataDTO {
+    contentCampaigns: ContentDebugDTO[];
+    dev: boolean;
+    draftTests: AbTestDraftPreviewSettingsDTO[];
+    loggedIn: boolean;
+    placements: PlacementDebugDTO[];
+    placementsTab: boolean;
+    popupPreviewSettings: PopupCampaignPreviewSettingsDTO[];
+    recommendationCampaigns: RecommendationDebugDTO[];
+    richSegmentsTab: boolean;
+    runningTests: AbTestPreviewSettingsDTO[];
+    schedulesTab: boolean;
+    segments: SegmentDebugDTO[];
+    showImprovedCampaignOverlayData: boolean;
+    showTestsTab: boolean;
+}
+
+interface DynamicPlacementDTO {
+    cssSelector: string;
+    enabled: boolean;
+    excludedPageIds: string[];
+    id: PlacementId;
+    includedPageIds: string[];
+    mode: string;
+    preserveClassAttribute: boolean;
+    urlRules: UrlRule[];
+    urls: string[];
+}
+
+interface Effect {
+    delayMin: number;
+    reEntryTolerance: number;
+    scrollMin: number;
+}
+
+interface EventRequestMessage extends PublicJacksonBean, RawEvents {
+    cartCookieHash: string;
+    cartProductIds: string[];
+    cartTotalPrice: number;
+    cartTotalSize: number;
+    categories: string[];
+    categoryIds: string[];
+    currentVariant: string;
+    customerReference: string;
+    date: Date;
+    debug?: DebugRequestParamsDTO;
+    debugCode: number;
+    elements: string[];
+    mailRef: string;
+    mailType: string;
+    pageType: PageType;
+    preview: boolean;
+    recotrace: string;
+    reference: string;
+    referrer: string;
+    renderMode: RenderMode;
+    segmentCodes: string[];
+    showCartPopupRecommendations: boolean;
+    sortOrder: string;
+    tags: string[];
+    url: string;
+}
+
+interface EventRequestMessageV0 extends EventRequestMessage {
+    catids: string[];
+    cats: string[];
+    ch: string;
+    cids: string[];
+    cpr: boolean;
+    cpv: string;
+    cr: string;
+    cs: number;
+    ct: number;
+    cv: string;
+    dt: number;
+    ed: Date;
+    el: string[];
+    ev: RawEvent[];
+    m: string;
+    mt: string;
+    ptp: PageType;
+    ref: string;
+    rm: RenderMode;
+    rt: string;
+    sc: string[];
+    skipcache: boolean;
+    skus: string[];
+    so: string;
+}
+
+interface EventRequestMessageV1 extends EventRequestMessage {
+    cart: CartItem[];
+    cart_hash: string;
+    cart_popup: boolean;
+    category_ids: string[];
+    coupon_campaign: string;
+    coupon_code: string;
+    coupon_used: boolean;
+    current_price_variant: string;
+    current_variant_id: string;
+    customer: PushedCustomer;
+    debug_token: number;
+    event_date: Date;
+    experiments: Experiment[];
+    mail_ref: string;
+    mail_type: string;
+    page_type: PageType;
+    ref: string;
+    response_mode: RenderMode;
+    restore_link: string;
+    segment_codes: string[];
+    skipcache: boolean;
+    sort_order: string;
+}
+
+interface EventResponseMessage extends PublicJacksonBean {
+    af: CustomerAffinityResponse;
+    cdc: string;
+    cmpid: string;
+    cpr: string;
+    cs: number;
+    ct: number;
+    customer: string;
+    debug: DebugToolbarDataDTO;
+    ed: Date;
+    errors: string[];
+    fb: FacebookData;
+    ga: GoogleAnalyticsData;
+    gl: string[];
+    he: boolean;
+    hiic: boolean;
+    js: string;
+    nc: boolean;
+    pv: number;
+    recommendations: { [index: string]: any };
+    se: SegmentsResponseBean;
+    visit: string;
+}
+
+interface Experiment extends PublicJacksonBean {
+    id: string;
+    id_stamp: string;
+    name: string;
+    variation: string;
+    variation_name: string;
+}
+
+interface FacebookData {
+    a: string;
+    e: AbstractFacebookPixelEvent<any>[];
+    p: string;
+    s: string[];
+}
+
+interface ForcedTestDTO {
+    t: TestId;
+    v: string;
+}
+
+interface GoogleAnalyticsData extends PublicJacksonBean {
+    s: string[];
+}
+
+interface Iterable<T> {
+}
+
+interface JacksonBean {
+}
+
+interface NostoIdentifierObjectId<T> extends Comparable<T> {
+    id: ObjectId;
+}
+
+interface NostoProduct extends NostoVariant {
+    ageGroup: string;
+    alternateImageUrls: string[];
+    brand: string;
+    categories: string[];
+    categoryIds: string[];
+    condition: string;
+    customFields: { [index: string]: string };
+    datePublished: Date;
+    description: string;
+    gender: string;
+    googleCategory: string;
+    gtin: string;
+    imageUrl: string;
+    inventoryLevel: number;
+    name: string;
+    partialVariants: { [index: string]: PartialVariant };
+    productId: string;
+    ratingValue: number;
+    reviewCount: number;
+    skus: NostoSku[];
+    supplierCost: number;
+    tags1: string[];
+    tags2: string[];
+    tags3: string[];
+    thumbUrl: string;
+    unitPricingBaseMeasure: number;
+    unitPricingMeasure: number;
+    unitPricingUnit: string;
+    url: string;
+    variantId: string;
+}
+
+interface NostoSku {
+    availability: string;
+    customFields: { [index: string]: string };
+    gtin: string;
+    id: string;
+    imageUrl: string;
+    inventoryLevel: number;
+    listPrice: number;
+    name: string;
+    price: number;
+    url: string;
+}
+
+interface NostoVariant {
+    availability: string;
+    listPrice: number;
+    price: number;
+    priceCurrencyCode: string;
+    priceText: string;
+}
+
+interface NostoVariation extends NostoVariant {
+    variantId: string;
+}
+
+interface ObjectId extends Comparable<ObjectId>, Serializable {
+    date: Date;
+    inc: number;
+    machine: number;
+    new: boolean;
+    time: number;
+    timeSecond: number;
+    timestamp: number;
+}
+
+interface OrderCustomer extends PublicJacksonBean, OrderInfoFields {
+    country: string;
+    first_name?: string;
+    last_name?: string;
+    newsletter: string;
+    order_number: string;
+    phone: string;
+    postCode: string;
+    post_code: string;
+}
+
+interface OrderInfoFields extends CustomerData {
+    countryCode: string;
+    orderNumber: string;
+    phoneNumber: string;
     type: string;
-    enum: string[];
+    zipCode: string;
 }
 
-export interface TentacledVariations {
-    type:  string;
-    items: TentacledItems;
+interface PartialVariant extends NostoVariation, Serializable {
+    product: Product;
+    variation_id: string;
 }
 
-export interface TentacledItems {
-    type:       string;
-    id:         string;
-    properties: MischievousProperties;
+interface PlacementDebugDTO {
+    activeRule: SegmentRuleDebugDTO;
+    divId: string;
+    enabled: boolean;
+    id: string;
+    name: string;
+    rules: PlacementRuleDTO[];
 }
 
-export interface MischievousProperties {
-    id:    AgeGroup;
-    name:  AgeGroup;
-    base:  AgeGroup;
-    rules: FluffyRules;
+interface PlacementId extends NostoIdentifierObjectId<PlacementId> {
 }
 
-export interface FluffyRules {
-    type:  string;
-    items: StickyItems;
+interface PlacementRule<T> {
+    feature: OnsiteFeature;
+    segment: SegmentId;
+    to: T;
 }
 
-export interface StickyItems {
-    type:       string;
-    id:         string;
-    properties: BraggadociousProperties;
+interface PlacementRuleDTO {
+    feature: OnsiteFeature;
+    segment: SegmentId;
+    to: CampaignId<any>;
 }
 
-export interface BraggadociousProperties {
-    placement: AgeGroup;
-    segment:   AgeGroup;
-    to:        AgeGroup;
-    feature:   FluffyFeature;
-}
-
-export interface FluffyFeature {
+interface PopupCampaignPreviewSettingsDTO {
+    campaignId: string;
+    condition: ConditionDTO;
+    enabled: boolean;
+    popupId: string;
     type: string;
-    enum: string[];
 }
 
-export interface Elements {
-    type:  string;
-    items: AgeGroup;
+interface PopupTriggerSettingsDTO {
+    condition: ConditionDTO;
+    effect: Effect;
+    enabled: boolean;
+    id: string;
+    name: string;
+    ordinal: number;
+    popupId: string;
 }
 
-export interface Errors {
-    type:  string;
-    items: AgeGroup;
+interface Product extends Serializable, Iterable<PartialVariant>, NostoProduct {
+    category: string[];
+    created: Date;
+    dateCreated: Date;
+    product: Product;
+    scores: ProductScores;
+    skus: ProductSKU[];
+    updated: Date;
+    variation_id: string;
+    variations: { [index: string]: PartialVariant };
 }
 
-export interface Events {
-    type:  string;
-    items: EventsItems;
+interface ProductPushResponse extends PublicJacksonBean {
+    messages: string[];
 }
 
-export interface EventsItems {
-    type:       string;
-    id:         string;
-    properties: Properties1;
+interface ProductSKU extends NostoSku, Serializable {
+    product: Product;
 }
 
-export interface Properties1 {
-    type:   AgeGroup;
-    target: AgeGroup;
-    ref:    AgeGroup;
-    refSrc: AgeGroup;
+interface ProductScores {
 }
 
-export interface Experiments {
-    type:  string;
-    items: ExperimentsItems;
+interface PublicJacksonBean extends JacksonBean {
 }
 
-export interface ExperimentsItems {
-    type:       string;
-    id:         string;
-    properties: Properties2;
-}
-
-export interface Properties2 {
-    id:             AgeGroup;
-    id_stamp:       AgeGroup;
-    name:           AgeGroup;
-    variation:      AgeGroup;
-    variation_name: AgeGroup;
-}
-
-export interface Fb {
-    type:       string;
-    id:         string;
-    properties: FbProperties;
-}
-
-export interface FbProperties {
-    p: AgeGroup;
-    a: AgeGroup;
-    s: PurpleS;
-    e: E;
-}
-
-export interface E {
-    type:  string;
-    items: EItems;
-}
-
-export interface EItems {
-    type:       string;
-    id:         string;
-    properties: Properties3;
-}
-
-export interface Properties3 {
-    n: AgeGroup;
-    d: AgeGroup;
-}
-
-export interface PurpleS {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface Ga {
-    type:       string;
-    id:         string;
-    properties: GaProperties;
-}
-
-export interface GaProperties {
-    s: FluffyS;
-}
-
-export interface FluffyS {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface Gl {
-    type:  string;
-    items: AgeGroup;
-}
-
-export interface PageType {
+interface PushedCustomer extends PublicJacksonBean {
+    customer_reference: string;
+    email: string;
+    first_name: string;
+    hcid: string;
+    last_name: string;
+    newsletter: boolean;
+    order_number: string;
+    source: string;
+    source_id: string;
     type: string;
-    enum: string[];
 }
 
-export interface PartialVariants {
-    type:                  string;
-    additional_properties: AdditionalProperties;
+interface PushedProduct extends PublicJacksonBean, NostoProduct {
+    age_group: string;
+    alternate_image_urls: string[];
+    category: string[];
+    category_id: string[];
+    custom_fields: { [index: string]: string };
+    date_published: Date;
+    google_category: string;
+    image_url: string;
+    inventory_level: number;
+    list_price: number;
+    price_currency_code: string;
+    product_id: string;
+    rating_value: number;
+    review_count: number;
+    skus: PushedProductSKU[];
+    supplier_cost: number;
+    thumb_url: string;
+    unit_pricing_base_measure: number;
+    unit_pricing_measure: number;
+    unit_pricing_unit: string;
+    variation_id: string;
+    variations: { [index: string]: PushedVariation };
 }
 
-export interface AdditionalProperties {
-    type:       string;
-    id:         string;
-    properties: AdditionalPropertiesProperties;
+interface PushedProductSKU extends JacksonBean, NostoSku {
+    custom_fields: { [index: string]: string };
+    image_url: string;
+    inventory_level: number;
+    list_price: number;
 }
 
-export interface AdditionalPropertiesProperties {
-    availability:        AgeGroup;
-    price_text:          AgeGroup;
-    price:               AgeGroup;
-    list_price:          AgeGroup;
-    price_currency_code: AgeGroup;
-    variation_id:        AgeGroup;
+interface PushedVariation extends PublicJacksonBean, NostoVariant {
+    list_price: number;
+    price_currency_code: string;
 }
 
-export interface PurchasedItems {
-    type:  string;
-    items: PurchasedItemsItems;
-}
-
-export interface PurchasedItemsItems {
-    type:       string;
-    id:         string;
-    properties: Properties4;
-}
-
-export interface Properties4 {
-    product_id:          AgeGroup;
-    sku_id:              AgeGroup;
-    quantity:            AgeGroup;
-    name:                AgeGroup;
-    unit_price:          AgeGroup;
-    price_currency_code: AgeGroup;
-}
-
-export interface Recommendations {
-    type:                  string;
-    additional_properties: AgeGroup;
-}
-
-export interface RenderMode {
+interface RawEvent extends PublicJacksonBean {
+    ref: string;
+    refSrc: string;
+    target: string;
     type: string;
-    enum: string[];
 }
 
-export interface SegmentCodes {
-    type:  string;
-    items: AgeGroup;
+interface RawEvents {
+    events: RawEvent[];
 }
 
-export interface Skus {
-    type:  string;
-    items: SkusItems;
+interface RecommendationDebugDTO {
+    divId: string;
+    divIds: string[];
+    enabled: boolean;
+    fbLink: string;
+    fbTitle: string;
+    fbType: string;
+    filtered: boolean;
+    id: RecommendationId;
+    ittt: boolean;
+    link: string;
+    productIds: { [index: string]: string };
+    recoId: string;
+    rendered: boolean;
+    resultType: string;
+    title: string;
+    type: string;
+    variant: boolean;
 }
 
-export interface SkusItems {
-    type:       string;
-    id:         string;
-    properties: Properties5;
+interface RecommendationId extends CampaignId<RecommendationId> {
 }
 
-export interface Properties5 {
-    id:              AgeGroup;
-    name:            AgeGroup;
-    price:           AgeGroup;
-    list_price:      AgeGroup;
-    url:             AgeGroup;
-    image_url:       AgeGroup;
-    gtin:            AgeGroup;
-    inventory_level: AgeGroup;
-    availability:    AgeGroup;
-    custom_fields:   FluffyCustomFields;
+interface SegmentDebugDTO {
+    active: boolean;
+    forced: boolean;
+    id: string;
+    name: string;
 }
 
-export interface FluffyCustomFields {
-    type:                  string;
-    additional_properties: AgeGroup;
+interface SegmentId extends NostoIdentifierObjectId<SegmentId> {
 }
 
-export interface FluffyTags {
-    type:  string;
-    items: AgeGroup;
+interface SegmentInfoBean extends JacksonBean {
+    id: string;
 }
 
-export interface Tags1 {
-    type:  string;
-    items: AgeGroup;
+interface SegmentRuleDebugDTO {
+    draft: TestDebugDTO;
+    segment: SegmentId;
+    test: TestDebugDTO;
+    to: CampaignId<any>;
+    type: TargetType;
 }
 
-export interface Tags2 {
-    type:  string;
-    items: AgeGroup;
+interface SegmentsResponseBean extends PublicJacksonBean {
+    active_segments: SegmentInfoBean[];
 }
 
-export interface Tags3 {
-    type:  string;
-    items: AgeGroup;
+interface Serializable {
 }
+
+interface ShopifyRef extends PublicJacksonBean {
+    token: string;
+}
+
+interface TestDebugDTO {
+    id: TestId;
+    variation: string;
+}
+
+interface TestId extends CampaignId<TestId> {
+}
+
+interface TestPlacementRule extends PlacementRule<any> {
+    placement: PlacementId;
+}
+
+interface TestPlacementRuleDTO extends TestPlacementRule {
+    to: CampaignId<any>;
+}
+
+interface TestPreviewsDTO {
+    d?: ForcedTestDTO;
+    t: ForcedTestDTO[];
+    u?: UnsavedDraftPreviewSettingsDTO;
+}
+
+interface UnsavedDraftPreviewSettingsDTO extends AbTestPreviewSettingsBase<VariationWithRulesDTO> {
+    variations: VariationWithRulesDTO[];
+}
+
+interface UrlRule {
+    predicate: UrlRulePredicate;
+    value: string;
+}
+
+interface ValidationError extends PublicJacksonBean {
+    key: string;
+    message: string;
+}
+
+interface Variant extends PartialVariant {
+    ageGroup: string;
+    alternateImageUrls: string[];
+    brand: string;
+    category: string[];
+    categoryIds: string[];
+    condition: string;
+    created: Date;
+    customFields: { [index: string]: string };
+    dateCreated: Date;
+    datePublished: Date;
+    description: string;
+    gender: string;
+    googleCategory: string;
+    gtin: string;
+    imageUrl: string;
+    inventoryLevel: number;
+    name: string;
+    ratingValue: number;
+    reviewCount: number;
+    supplierCost: number;
+    tags1: string[];
+    tags2: string[];
+    tags3: string[];
+    thumbUrl: string;
+    unitPricingBaseMeasure: number;
+    unitPricingMeasure: number;
+    unitPricingUnit: string;
+    updated: Date;
+    url: string;
+}
+
+interface VariationWithRulesDTO extends AbTestVariationDTO {
+    rules: TestPlacementRuleDTO[];
+}
+
+interface WebsiteOrder extends PublicJacksonBean {
+    created_at: Date;
+    external_order_ref: string;
+    info: OrderCustomer;
+    items: ConversionItem[];
+    order_status: string;
+    order_status_label: string;
+    payment_provider: string;
+}
+
+type Method = "SPLIT_TEST" | "MVT";
+
+type OnsiteFeature = "RECOMMENDATION" | "CONTENT_DELIVERY" | "POPUP" | "SPLIT_TESTING" | "SCHEDULING";
+
+type PageType = "front" | "category" | "product" | "cart" | "search" | "notfound" | "order" | "other" | "checkout";
+
+type RenderMode = "HTML" | "SIMPLE" | "JSON_170x170" | "JSON_100_X_100" | "JSON_90x70" | "JSON_50x50" | "JSON_30x30" | "JSON_100x140" | "JSON_200x200" | "JSON_400x400" | "JSON_750x750" | "JSON_10_MAX_SQUARE" | "JSON_200x200_SQUARE" | "JSON_400x400_SQUARE" | "JSON_750x750_SQUARE" | "JSON_ORIGINAL";
+
+type TargetType = "RECOMMENDATION" | "ONSITE_CONTENT" | "AB_TEST" | "HIDE_CONTENT";
+
+type UrlRulePredicate = "IS" | "IS_NOT" | "CONTAINS" | "DOES_NOT_CONTAIN" | "MATCHES_REGEXP_PATTERN";
