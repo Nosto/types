@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
-// Generated using typescript-generator version 2.27.744 on 2020-12-16 15:51:22.
+// Generated using typescript-generator version 2.27.744 on 2021-01-13 17:37:10.
 
 interface AbTestDraftPreviewSettingsDTO extends AbTestPreviewSettingsBase<AbTestVariationDTO> {
     variations: AbTestVariationDTO[];
@@ -41,11 +41,11 @@ interface CartItem extends Serializable, CartItemFields {
 
 interface CartItemFields {
     name: string;
-    priceCurrencyCode: string;
-    productId: string;
+    price_currency_code: string;
+    product_id: string;
     quantity: number;
-    skuId: string;
-    unitPrice: number;
+    sku_id: string;
+    unit_price: number;
 }
 
 interface ClientScriptSettingsDTO extends PublicJacksonBean {
@@ -69,7 +69,6 @@ interface ClientScriptSettingsDTO extends PublicJacksonBean {
     live: boolean;
     nostoRefParam: string;
     pageTypeFiltersForUntaggedPages: boolean;
-    partnerRecommendationEndpoint: string;
     placements: { [index: string]: DynamicPlacementDTO };
     popupRibbonUrlFilter: boolean;
     recoveryPopupEnabled: boolean;
@@ -82,10 +81,8 @@ interface ClientScriptSettingsDTO extends PublicJacksonBean {
     shopifyCmpRedirect: boolean;
     site: string;
     subDomain: string;
-    subscribeWebSocketChannel: boolean;
     trackingTypes: string[];
     triggerAddToCartPopupWithCookie: boolean;
-    websocketEndPoint: string;
 }
 
 interface Comparable<T> {
@@ -95,28 +92,28 @@ interface ConditionDTO {
     advanced: boolean;
     brands: string[];
     categories: string[];
-    excBrands: string[];
-    excCategories: string[];
-    excLocations: string[][];
-    excPageTypes: PageType[];
-    excRefererUrls: string[];
-    excTags: string[];
-    excUrlParameters: string[];
-    excUrls: string[];
-    hideOnDesktop: boolean;
-    hideOnMobile: boolean;
+    exc_brands: string[];
+    exc_categories: string[];
+    exc_locations: string[][];
+    exc_page_types: PageType[];
+    exc_referer_urls: string[];
+    exc_tags: string[];
+    exc_url_parameters: string[];
+    exc_urls: string[];
+    hide_on_desktop: boolean;
+    hide_on_mobile: boolean;
     locations: string[][];
-    maxCartSize: number;
-    maxCartValue: number;
-    maxPageViews: number;
-    minCartSize: number;
-    minCartValue: number;
-    minPageViews: number;
-    pageTypes: PageType[];
-    refererUrls: string[];
+    max_cart_size: number;
+    max_cart_value: number;
+    max_page_views: number;
+    min_cart_size: number;
+    min_cart_value: number;
+    min_page_views: number;
+    page_types: PageType[];
+    referer_urls: string[];
     tags: string[];
-    treatUrlConditionsAsFilters: boolean;
-    urlParameters: string[];
+    treat_url_conditions_as_filters: boolean;
+    url_parameters: string[];
     urls: string[];
 }
 
@@ -132,10 +129,6 @@ interface ContentId extends CampaignId<ContentId> {
 }
 
 interface ConversionItem extends PublicJacksonBean, CartItemFields {
-    price_currency_code: string;
-    product_id: string;
-    sku_id: string;
-    unit_price: number;
 }
 
 interface CustomerAffinityResponse extends PublicJacksonBean {
@@ -157,10 +150,10 @@ interface CustomerDTO extends PublicJacksonBean {
 }
 
 interface CustomerData {
-    customerReference?: string;
+    customer_reference?: string;
     email?: string;
-    firstName?: string;
-    lastName?: string;
+    first_name?: string;
+    last_name?: string;
     newsletter?: boolean;
 }
 
@@ -201,35 +194,35 @@ interface DynamicPlacementDTO {
 }
 
 interface Effect {
-    delayMin: number;
-    reEntryTolerance: number;
-    scrollMin: number;
+    delay_min: number;
+    re_entry_tolerance: number;
+    scroll_min: number;
 }
 
 interface EventRequestMessage extends PublicJacksonBean, RawEvents {
-    cartCookieHash: string;
-    cartProductIds: string[];
-    cartTotalPrice: number;
-    cartTotalSize: number;
+    cart_cookie_hash: string;
+    cart_product_ids: string[];
+    cart_total_price: number;
+    cart_total_size: number;
     categories: string[];
-    categoryIds: string[];
-    currentVariant: string;
-    customerReference: string;
+    category_ids: string[];
+    current_variant: string;
+    customer_reference: string;
     date: Date;
     debug?: DebugRequestParamsDTO;
-    debugCode: number;
+    debug_code: string;
     elements: string[];
-    mailRef: string;
-    mailType: string;
-    pageType: PageType;
+    mail_ref: string;
+    mail_type: string;
+    page_type: PageType;
     preview: boolean;
     recotrace: string;
     reference: string;
     referrer: string;
-    renderMode: RenderMode;
-    segmentCodes: string[];
-    showCartPopupRecommendations: boolean;
-    sortOrder: string;
+    render_mode: RenderMode;
+    segment_codes: string[];
+    show_cart_popup_recommendations: boolean;
+    sort_order: string;
     tags: string[];
     url: string;
 }
@@ -245,7 +238,7 @@ interface EventRequestMessageV0 extends EventRequestMessage {
     cs: number;
     ct: number;
     cv: string;
-    dt: number;
+    dt: string;
     ed: Date;
     el: string[];
     ev: RawEvent[];
@@ -265,25 +258,19 @@ interface EventRequestMessageV1 extends EventRequestMessage {
     cart: CartItem[];
     cart_hash: string;
     cart_popup: boolean;
-    category_ids: string[];
     coupon_campaign: string;
     coupon_code: string;
     coupon_used: boolean;
     current_price_variant: string;
     current_variant_id: string;
     customer: PushedCustomer;
-    debug_token: number;
+    debug_token: string;
     event_date: Date;
     experiments: Experiment[];
-    mail_ref: string;
-    mail_type: string;
-    page_type: PageType;
     ref: string;
     response_mode: RenderMode;
     restore_link: string;
-    segment_codes: string[];
     skipcache: boolean;
-    sort_order: string;
 }
 
 interface EventResponseMessage extends PublicJacksonBean {
@@ -345,61 +332,61 @@ interface NostoIdentifierObjectId<T> extends Comparable<T> {
 }
 
 interface NostoProduct extends NostoVariant {
-    ageGroup: string;
-    alternateImageUrls: string[];
+    age_group: string;
+    alternate_image_urls: string[];
     brand: string;
     categories: string[];
-    categoryIds: string[];
+    category_ids: string[];
     condition: string;
-    customFields: { [index: string]: string };
-    datePublished: Date;
+    custom_fields: { [index: string]: string };
+    date_published: Date;
     description: string;
     gender: string;
-    googleCategory: string;
+    google_category: string;
     gtin: string;
-    imageUrl: string;
-    inventoryLevel: number;
+    image_url: string;
+    inventory_level: number;
     name: string;
-    partialVariants: { [index: string]: PartialVariant };
-    productId: string;
-    ratingValue: number;
-    reviewCount: number;
+    partial_variants: { [index: string]: PartialVariant };
+    product_id: string;
+    rating_value: number;
+    review_count: number;
     skus: NostoSku[];
-    supplierCost: number;
+    supplier_cost: number;
     tags1: string[];
     tags2: string[];
     tags3: string[];
-    thumbUrl: string;
-    unitPricingBaseMeasure: number;
-    unitPricingMeasure: number;
-    unitPricingUnit: string;
+    thumb_url: string;
+    unit_pricing_base_measure: number;
+    unit_pricing_measure: number;
+    unit_pricing_unit: string;
     url: string;
-    variantId: string;
+    variant_id: string;
 }
 
-interface NostoSku {
+interface NostoSku extends Validated {
     availability: string;
-    customFields: { [index: string]: string };
+    custom_fields: { [index: string]: string };
     gtin: string;
     id: string;
-    imageUrl: string;
-    inventoryLevel: number;
-    listPrice: number;
+    image_url: string;
+    inventory_level: number;
+    list_price: number;
     name: string;
     price: number;
     url: string;
 }
 
-interface NostoVariant {
+interface NostoVariant extends Validated {
     availability: string;
-    listPrice: number;
+    list_price: number;
     price: number;
-    priceCurrencyCode: string;
-    priceText: string;
+    price_currency_code: string;
+    price_text: string;
 }
 
 interface NostoVariation extends NostoVariant {
-    variantId: string;
+    variant_id: string;
 }
 
 interface ObjectId extends Comparable<ObjectId>, Serializable {
@@ -408,27 +395,23 @@ interface ObjectId extends Comparable<ObjectId>, Serializable {
     machine: number;
     new: boolean;
     time: number;
-    timeSecond: number;
+    time_second: number;
     timestamp: number;
 }
 
 interface OrderCustomer extends PublicJacksonBean, OrderInfoFields {
     country: string;
-    first_name?: string;
-    last_name?: string;
     newsletter: string;
-    order_number: string;
     phone: string;
-    postCode: string;
     post_code: string;
 }
 
 interface OrderInfoFields extends CustomerData {
-    countryCode: string;
-    orderNumber: string;
-    phoneNumber: string;
+    country_code: string;
+    order_number: string;
+    phone_number: string;
     type: string;
-    zipCode: string;
+    zip_code: string;
 }
 
 interface PartialVariant extends NostoVariation, Serializable {
@@ -461,10 +444,10 @@ interface PlacementRuleDTO {
 }
 
 interface PopupCampaignPreviewSettingsDTO {
-    campaignId: string;
+    campaign_id: string;
     condition: ConditionDTO;
     enabled: boolean;
-    popupId: string;
+    popup_id: string;
     type: string;
 }
 
@@ -475,13 +458,13 @@ interface PopupTriggerSettingsDTO {
     id: string;
     name: string;
     ordinal: number;
-    popupId: string;
+    popup_id: string;
 }
 
 interface Product extends Serializable, Iterable<PartialVariant>, NostoProduct {
     category: string[];
     created: Date;
-    dateCreated: Date;
+    date_created: Date;
     product: Product;
     scores: ProductScores;
     skus: ProductSKU[];
@@ -518,40 +501,17 @@ interface PushedCustomer extends PublicJacksonBean {
 }
 
 interface PushedProduct extends PublicJacksonBean, NostoProduct {
-    age_group: string;
-    alternate_image_urls: string[];
     category: string[];
     category_id: string[];
-    custom_fields: { [index: string]: string };
-    date_published: Date;
-    google_category: string;
-    image_url: string;
-    inventory_level: number;
-    list_price: number;
-    price_currency_code: string;
-    product_id: string;
-    rating_value: number;
-    review_count: number;
     skus: PushedProductSKU[];
-    supplier_cost: number;
-    thumb_url: string;
-    unit_pricing_base_measure: number;
-    unit_pricing_measure: number;
-    unit_pricing_unit: string;
     variation_id: string;
     variations: { [index: string]: PushedVariation };
 }
 
 interface PushedProductSKU extends JacksonBean, NostoSku {
-    custom_fields: { [index: string]: string };
-    image_url: string;
-    inventory_level: number;
-    list_price: number;
 }
 
 interface PushedVariation extends PublicJacksonBean, NostoVariant {
-    list_price: number;
-    price_currency_code: string;
 }
 
 interface RawEvent extends PublicJacksonBean {
@@ -652,39 +612,42 @@ interface UrlRule {
     value: string;
 }
 
+interface Validated {
+}
+
 interface ValidationError extends PublicJacksonBean {
     key: string;
     message: string;
 }
 
 interface Variant extends PartialVariant {
-    ageGroup: string;
-    alternateImageUrls: string[];
+    age_group: string;
+    alternate_image_urls: string[];
     brand: string;
     category: string[];
-    categoryIds: string[];
+    category_ids: string[];
     condition: string;
     created: Date;
-    customFields: { [index: string]: string };
-    dateCreated: Date;
-    datePublished: Date;
+    custom_fields: { [index: string]: string };
+    date_created: Date;
+    date_published: Date;
     description: string;
     gender: string;
-    googleCategory: string;
+    google_category: string;
     gtin: string;
-    imageUrl: string;
-    inventoryLevel: number;
+    image_url: string;
+    inventory_level: number;
     name: string;
-    ratingValue: number;
-    reviewCount: number;
-    supplierCost: number;
+    rating_value: number;
+    review_count: number;
+    supplier_cost: number;
     tags1: string[];
     tags2: string[];
     tags3: string[];
-    thumbUrl: string;
-    unitPricingBaseMeasure: number;
-    unitPricingMeasure: number;
-    unitPricingUnit: string;
+    thumb_url: string;
+    unit_pricing_base_measure: number;
+    unit_pricing_measure: number;
+    unit_pricing_unit: string;
     updated: Date;
     url: string;
 }
