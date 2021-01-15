@@ -1,4 +1,32 @@
-// Generated using typescript-generator version 2.27.744 on 2021-01-15 10:28:46.
+// Generated using typescript-generator version 2.27.744 on 2021-01-15 11:23:50.
+
+export class AbTestPreviewSettingsBase<T> {
+    id: TestId;
+    method: Method;
+    name: string;
+    segment: string;
+    variations: T[];
+}
+
+export class AbTestDraftPreviewSettingsDTO extends AbTestPreviewSettingsBase<AbTestVariationDTO> {
+    variations: AbTestVariationDTO[];
+}
+
+export class AbTestPreviewSettingsDTO extends AbTestPreviewSettingsBase<AbTestVariationDTO> {
+    variations: AbTestVariationDTO[];
+}
+
+export interface AbTestVariation {
+    base: boolean;
+    id: string;
+    name: string;
+}
+
+export class AbTestVariationDTO implements AbTestVariation {
+    base: boolean;
+    id: string;
+    name: string;
+}
 
 export class AbstractFacebookPixelEvent<D> {
     d: D;
@@ -106,6 +134,17 @@ export class ConditionDTO {
     urls: string[];
 }
 
+export class ContentDebugDTO {
+    divIds: string[];
+    enabled: boolean;
+    id: ContentId;
+    name: string;
+    rendered: boolean;
+}
+
+export class ContentId extends CampaignId<ContentId> {
+}
+
 export class ConversionItem extends PublicJacksonBean implements CartItemFields {
     name: string;
     price_currency_code: string;
@@ -144,15 +183,32 @@ export interface CustomerData {
 export class DebugRequestParamsDTO {
     at?: Date;
     ep: boolean;
-    fs: SegmentId[];
+    fs: string[];
     tp?: TestPreviewsDTO;
+}
+
+export class DebugToolbarDataDTO {
+    contentCampaigns: ContentDebugDTO[];
+    dev: boolean;
+    draftTests: AbTestDraftPreviewSettingsDTO[];
+    loggedIn: boolean;
+    placements: PlacementDebugDTO[];
+    placementsTab: boolean;
+    popupPreviewSettings: PopupCampaignPreviewSettingsDTO[];
+    recommendationCampaigns: RecommendationDebugDTO[];
+    richSegmentsTab: boolean;
+    runningTests: AbTestPreviewSettingsDTO[];
+    schedulesTab: boolean;
+    segments: SegmentDebugDTO[];
+    showImprovedCampaignOverlayData: boolean;
+    showTestsTab: boolean;
 }
 
 export class DynamicPlacementDTO {
     cssSelector: string;
     enabled: boolean;
     excludedPageIds: string[];
-    id: PlacementId;
+    id: string;
     includedPageIds: string[];
     mode: string;
     preserveClassAttribute: boolean;
@@ -249,7 +305,7 @@ export class EventResponseMessage extends PublicJacksonBean {
     cs: number;
     ct: number;
     customer: string;
-    debug: any;
+    debug: DebugToolbarDataDTO;
     ed: Date;
     errors: string[];
     fb: FacebookData;
@@ -385,7 +441,33 @@ export class PartialVariant implements NostoVariation, Serializable {
     variation_id: string;
 }
 
-export class PlacementId extends NostoIdentifierObjectId<PlacementId> {
+export class PlacementDebugDTO {
+    activeRule: SegmentRuleDebugDTO;
+    divId: string;
+    enabled: boolean;
+    id: string;
+    name: string;
+    rules: PlacementRuleDTO[];
+}
+
+export interface PlacementRule<T> {
+    feature: OnsiteFeature;
+    segment: string;
+    to: T;
+}
+
+export class PlacementRuleDTO {
+    feature: OnsiteFeature;
+    segment: string;
+    to: CampaignId<any>;
+}
+
+export class PopupCampaignPreviewSettingsDTO {
+    campaign_id: string;
+    condition: ConditionDTO;
+    enabled: boolean;
+    popup_id: string;
+    type: string;
 }
 
 export class PopupTriggerSettingsDTO {
@@ -545,11 +627,46 @@ export interface RawEvents {
     events: string[][];
 }
 
-export class SegmentId extends NostoIdentifierObjectId<SegmentId> {
+export class RecommendationDebugDTO {
+    divId: string;
+    divIds: string[];
+    enabled: boolean;
+    fbLink: string;
+    fbTitle: string;
+    fbType: string;
+    filtered: boolean;
+    id: RecommendationId;
+    ittt: boolean;
+    link: string;
+    productIds: { [index: string]: string };
+    recoId: string;
+    rendered: boolean;
+    resultType: string;
+    title: string;
+    type: string;
+    variant: boolean;
+}
+
+export class RecommendationId extends CampaignId<RecommendationId> {
+}
+
+export class SegmentDebugDTO {
+    active: boolean;
+    forced: boolean;
+    id: string;
+    name: string;
 }
 
 export class SegmentInfoBean extends JacksonBean {
     id: string;
+}
+
+export class SegmentRuleDebugDTO {
+    draft: TestDebugDTO;
+    segment: string;
+    test: TestDebugDTO;
+    to: CampaignId<any>;
+    type: TargetType;
 }
 
 export class SegmentsResponseBean extends PublicJacksonBean {
@@ -563,13 +680,33 @@ export class ShopifyRef extends PublicJacksonBean {
     token: string;
 }
 
+export class TestDebugDTO {
+    id: TestId;
+    variation: string;
+}
+
 export class TestId extends CampaignId<TestId> {
+}
+
+export interface TestPlacementRule extends PlacementRule<any> {
+    placement: string;
+}
+
+export class TestPlacementRuleDTO implements TestPlacementRule {
+    feature: OnsiteFeature;
+    placement: string;
+    segment: string;
+    to: CampaignId<any>;
 }
 
 export class TestPreviewsDTO {
     d?: ForcedTestDTO;
     t: ForcedTestDTO[];
-    u?: any;
+    u?: UnsavedDraftPreviewSettingsDTO;
+}
+
+export class UnsavedDraftPreviewSettingsDTO extends AbTestPreviewSettingsBase<VariationWithRulesDTO> {
+    variations: VariationWithRulesDTO[];
 }
 
 export class UrlRule {
@@ -617,6 +754,10 @@ export class Variant extends PartialVariant {
     url: string;
 }
 
+export class VariationWithRulesDTO extends AbTestVariationDTO {
+    rules: TestPlacementRuleDTO[];
+}
+
 export class WebsiteOrder extends PublicJacksonBean {
     created_at: Date;
     external_order_ref: string;
@@ -625,6 +766,11 @@ export class WebsiteOrder extends PublicJacksonBean {
     order_status: string;
     order_status_label: string;
     payment_provider: string;
+}
+
+export const enum Method {
+    SPLIT_TEST = "SPLIT_TEST",
+    MVT = "MVT",
 }
 
 export const enum OnsiteFeature {
@@ -664,6 +810,13 @@ export const enum RenderMode {
     JSON_400x400_SQUARE = "JSON_400x400_SQUARE",
     JSON_750x750_SQUARE = "JSON_750x750_SQUARE",
     JSON_ORIGINAL = "JSON_ORIGINAL",
+}
+
+export const enum TargetType {
+    RECOMMENDATION = "RECOMMENDATION",
+    ONSITE_CONTENT = "ONSITE_CONTENT",
+    AB_TEST = "AB_TEST",
+    HIDE_CONTENT = "HIDE_CONTENT",
 }
 
 export const enum UrlRulePredicate {
