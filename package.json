@@ -1,6 +1,6 @@
 {
   "name": "@nosto/types",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Nosto Types",
   "main": "lib/types.js",
   "types": "lib/types.d.ts",
