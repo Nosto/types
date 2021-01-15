@@ -1,4 +1,4 @@
-// Generated using typescript-generator version 2.27.744 on 2021-01-15 08:54:39.
+// Generated using typescript-generator version 2.27.744 on 2021-01-15 10:28:46.
 
 export class AbstractFacebookPixelEvent<D> {
     d: D;
@@ -6,7 +6,7 @@ export class AbstractFacebookPixelEvent<D> {
 }
 
 export class NostoIdentifierObjectId<T> implements Comparable<T> {
-    id: ObjectId;
+    id: string;
 }
 
 export class CampaignId<T> extends NostoIdentifierObjectId<T> {
@@ -179,7 +179,7 @@ export class EventRequestMessage extends PublicJacksonBean implements RawEvents 
     debug?: DebugRequestParamsDTO;
     debug_code: string;
     elements: string[];
-    events: RawEvent[];
+    events: string[][];
     mail_ref: string;
     mail_type: string;
     page_type: PageType;
@@ -209,7 +209,7 @@ export class EventRequestMessageV0 extends EventRequestMessage {
     dt: string;
     ed: Date;
     el: string[];
-    ev: RawEvent[];
+    ev: string[][];
     m: string;
     mt: string;
     ptp: PageType;
@@ -348,16 +348,6 @@ export interface NostoVariant extends Validated {
 
 export interface NostoVariation extends NostoVariant {
     variant_id: string;
-}
-
-export class ObjectId implements Comparable<ObjectId>, Serializable {
-    date: Date;
-    inc: number;
-    machine: number;
-    new: boolean;
-    time: number;
-    time_second: number;
-    timestamp: number;
 }
 
 export class OrderCustomer extends PublicJacksonBean implements OrderInfoFields {
@@ -551,15 +541,8 @@ export class PushedVariation extends PublicJacksonBean implements NostoVariant {
     price_text: string;
 }
 
-export class RawEvent extends PublicJacksonBean {
-    ref: string;
-    refSrc: string;
-    target: string;
-    type: string;
-}
-
 export interface RawEvents {
-    events: RawEvent[];
+    events: string[][];
 }
 
 export class SegmentId extends NostoIdentifierObjectId<SegmentId> {
