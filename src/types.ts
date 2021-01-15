@@ -1,30 +1,16 @@
-// Generated using typescript-generator version 2.27.744 on 2021-01-14 22:43:01.
+// Generated using typescript-generator version 2.27.744 on 2021-01-15 08:54:39.
 
 export class AbstractFacebookPixelEvent<D> {
     d: D;
     n: string;
-
-    constructor(data: AbstractFacebookPixelEvent<D>) {
-        this.d = data.d;
-        this.n = data.n;
-    }
 }
 
 export class NostoIdentifierObjectId<T> implements Comparable<T> {
     id: ObjectId;
-
-    constructor(data: NostoIdentifierObjectId<T>) {
-        this.id = data.id;
-    }
 }
 
 export class CampaignId<T> extends NostoIdentifierObjectId<T> {
     feature: OnsiteFeature;
-
-    constructor(data: CampaignId<T>) {
-        super(data);
-        this.feature = data.feature;
-    }
 }
 
 export class CartItem implements Serializable, CartItemFields {
@@ -34,15 +20,6 @@ export class CartItem implements Serializable, CartItemFields {
     quantity: number;
     sku_id: string;
     unit_price: number;
-
-    constructor(data: CartItem) {
-        this.name = data.name;
-        this.price_currency_code = data.price_currency_code;
-        this.product_id = data.product_id;
-        this.quantity = data.quantity;
-        this.sku_id = data.sku_id;
-        this.unit_price = data.unit_price;
-    }
 }
 
 export interface CartItemFields {
@@ -55,16 +32,9 @@ export interface CartItemFields {
 }
 
 export class JacksonBean {
-
-    constructor(data: JacksonBean) {
-    }
 }
 
 export class PublicJacksonBean extends JacksonBean {
-
-    constructor(data: PublicJacksonBean) {
-        super(data);
-    }
 }
 
 export class ClientScriptSettingsDTO extends PublicJacksonBean {
@@ -102,44 +72,6 @@ export class ClientScriptSettingsDTO extends PublicJacksonBean {
     subDomain: string;
     trackingTypes: string[];
     triggerAddToCartPopupWithCookie: boolean;
-
-    constructor(data: ClientScriptSettingsDTO) {
-        super(data);
-        this.account = data.account;
-        this.addToCartPopup = data.addToCartPopup;
-        this.anyDomain = data.anyDomain;
-        this.browserQueueActive = data.browserQueueActive;
-        this.cmpMode = data.cmpMode;
-        this.collectEmailFromURL = data.collectEmailFromURL;
-        this.cookieTime = data.cookieTime;
-        this.debugRedirectUrl = data.debugRedirectUrl;
-        this.defaultCurrencyCode = data.defaultCurrencyCode;
-        this.defaultVariantId = data.defaultVariantId;
-        this.discountPopupTriggers = data.discountPopupTriggers;
-        this.discountPopupVisible = data.discountPopupVisible;
-        this.emailAddressUrlParamName = data.emailAddressUrlParamName;
-        this.exchangeRates = data.exchangeRates;
-        this.extraHosts = data.extraHosts;
-        this.fullTaggingRequired = data.fullTaggingRequired;
-        this.jsErrorUrl = data.jsErrorUrl;
-        this.live = data.live;
-        this.nostoRefParam = data.nostoRefParam;
-        this.pageTypeFiltersForUntaggedPages = data.pageTypeFiltersForUntaggedPages;
-        this.placements = data.placements;
-        this.popupRibbonUrlFilter = data.popupRibbonUrlFilter;
-        this.recoveryPopupEnabled = data.recoveryPopupEnabled;
-        this.searchQueryParam = data.searchQueryParam;
-        this.secureCookie = data.secureCookie;
-        this.segmentUrlParameters = data.segmentUrlParameters;
-        this.sendTaggingOnlyIfNeeded = data.sendTaggingOnlyIfNeeded;
-        this.sentryDsn = data.sentryDsn;
-        this.server = data.server;
-        this.shopifyCmpRedirect = data.shopifyCmpRedirect;
-        this.site = data.site;
-        this.subDomain = data.subDomain;
-        this.trackingTypes = data.trackingTypes;
-        this.triggerAddToCartPopupWithCookie = data.triggerAddToCartPopupWithCookie;
-    }
 }
 
 export interface Comparable<T> {
@@ -172,35 +104,6 @@ export class ConditionDTO {
     treat_url_conditions_as_filters: boolean;
     url_parameters: string[];
     urls: string[];
-
-    constructor(data: ConditionDTO) {
-        this.advanced = data.advanced;
-        this.brands = data.brands;
-        this.categories = data.categories;
-        this.exc_brands = data.exc_brands;
-        this.exc_categories = data.exc_categories;
-        this.exc_locations = data.exc_locations;
-        this.exc_page_types = data.exc_page_types;
-        this.exc_referer_urls = data.exc_referer_urls;
-        this.exc_tags = data.exc_tags;
-        this.exc_url_parameters = data.exc_url_parameters;
-        this.exc_urls = data.exc_urls;
-        this.hide_on_desktop = data.hide_on_desktop;
-        this.hide_on_mobile = data.hide_on_mobile;
-        this.locations = data.locations;
-        this.max_cart_size = data.max_cart_size;
-        this.max_cart_value = data.max_cart_value;
-        this.max_page_views = data.max_page_views;
-        this.min_cart_size = data.min_cart_size;
-        this.min_cart_value = data.min_cart_value;
-        this.min_page_views = data.min_page_views;
-        this.page_types = data.page_types;
-        this.referer_urls = data.referer_urls;
-        this.tags = data.tags;
-        this.treat_url_conditions_as_filters = data.treat_url_conditions_as_filters;
-        this.url_parameters = data.url_parameters;
-        this.urls = data.urls;
-    }
 }
 
 export class ConversionItem extends PublicJacksonBean implements CartItemFields {
@@ -210,38 +113,16 @@ export class ConversionItem extends PublicJacksonBean implements CartItemFields 
     quantity: number;
     sku_id: string;
     unit_price: number;
-
-    constructor(data: ConversionItem) {
-        super(data);
-        this.name = data.name;
-        this.price_currency_code = data.price_currency_code;
-        this.product_id = data.product_id;
-        this.quantity = data.quantity;
-        this.sku_id = data.sku_id;
-        this.unit_price = data.unit_price;
-    }
 }
 
 export class CustomerAffinityResponse extends PublicJacksonBean {
     top_brands: CustomerAffinityResponseItem[];
     top_categories: CustomerAffinityResponseItem[];
-
-    constructor(data: CustomerAffinityResponse) {
-        super(data);
-        this.top_brands = data.top_brands;
-        this.top_categories = data.top_categories;
-    }
 }
 
 export class CustomerAffinityResponseItem extends JacksonBean {
     name: string;
     score: number;
-
-    constructor(data: CustomerAffinityResponseItem) {
-        super(data);
-        this.name = data.name;
-        this.score = data.score;
-    }
 }
 
 export class CustomerDTO extends PublicJacksonBean {
@@ -250,15 +131,6 @@ export class CustomerDTO extends PublicJacksonBean {
     last_name: string;
     marketing_permission: boolean;
     ref: string;
-
-    constructor(data: CustomerDTO) {
-        super(data);
-        this.first_name = data.first_name;
-        this.id = data.id;
-        this.last_name = data.last_name;
-        this.marketing_permission = data.marketing_permission;
-        this.ref = data.ref;
-    }
 }
 
 export interface CustomerData {
@@ -274,13 +146,6 @@ export class DebugRequestParamsDTO {
     ep: boolean;
     fs: SegmentId[];
     tp?: TestPreviewsDTO;
-
-    constructor(data: DebugRequestParamsDTO) {
-        this.at = data.at;
-        this.ep = data.ep;
-        this.fs = data.fs;
-        this.tp = data.tp;
-    }
 }
 
 export class DynamicPlacementDTO {
@@ -293,30 +158,12 @@ export class DynamicPlacementDTO {
     preserveClassAttribute: boolean;
     urlRules: UrlRule[];
     urls: string[];
-
-    constructor(data: DynamicPlacementDTO) {
-        this.cssSelector = data.cssSelector;
-        this.enabled = data.enabled;
-        this.excludedPageIds = data.excludedPageIds;
-        this.id = data.id;
-        this.includedPageIds = data.includedPageIds;
-        this.mode = data.mode;
-        this.preserveClassAttribute = data.preserveClassAttribute;
-        this.urlRules = data.urlRules;
-        this.urls = data.urls;
-    }
 }
 
 export class Effect {
     delay_min: number;
     re_entry_tolerance: number;
     scroll_min: number;
-
-    constructor(data: Effect) {
-        this.delay_min = data.delay_min;
-        this.re_entry_tolerance = data.re_entry_tolerance;
-        this.scroll_min = data.scroll_min;
-    }
 }
 
 export class EventRequestMessage extends PublicJacksonBean implements RawEvents {
@@ -346,36 +193,6 @@ export class EventRequestMessage extends PublicJacksonBean implements RawEvents 
     sort_order: string;
     tags: string[];
     url: string;
-
-    constructor(data: EventRequestMessage) {
-        super(data);
-        this.cart_cookie_hash = data.cart_cookie_hash;
-        this.cart_product_ids = data.cart_product_ids;
-        this.cart_total_price = data.cart_total_price;
-        this.cart_total_size = data.cart_total_size;
-        this.categories = data.categories;
-        this.category_ids = data.category_ids;
-        this.current_variant = data.current_variant;
-        this.customer_reference = data.customer_reference;
-        this.date = data.date;
-        this.debug = data.debug;
-        this.debug_code = data.debug_code;
-        this.elements = data.elements;
-        this.events = data.events;
-        this.mail_ref = data.mail_ref;
-        this.mail_type = data.mail_type;
-        this.page_type = data.page_type;
-        this.preview = data.preview;
-        this.recotrace = data.recotrace;
-        this.reference = data.reference;
-        this.referrer = data.referrer;
-        this.render_mode = data.render_mode;
-        this.segment_codes = data.segment_codes;
-        this.show_cart_popup_recommendations = data.show_cart_popup_recommendations;
-        this.sort_order = data.sort_order;
-        this.tags = data.tags;
-        this.url = data.url;
-    }
 }
 
 export class EventRequestMessageV0 extends EventRequestMessage {
@@ -403,34 +220,6 @@ export class EventRequestMessageV0 extends EventRequestMessage {
     skipcache: boolean;
     skus: string[];
     so: string;
-
-    constructor(data: EventRequestMessageV0) {
-        super(data);
-        this.catids = data.catids;
-        this.cats = data.cats;
-        this.ch = data.ch;
-        this.cids = data.cids;
-        this.cpr = data.cpr;
-        this.cpv = data.cpv;
-        this.cr = data.cr;
-        this.cs = data.cs;
-        this.ct = data.ct;
-        this.cv = data.cv;
-        this.dt = data.dt;
-        this.ed = data.ed;
-        this.el = data.el;
-        this.ev = data.ev;
-        this.m = data.m;
-        this.mt = data.mt;
-        this.ptp = data.ptp;
-        this.ref = data.ref;
-        this.rm = data.rm;
-        this.rt = data.rt;
-        this.sc = data.sc;
-        this.skipcache = data.skipcache;
-        this.skus = data.skus;
-        this.so = data.so;
-    }
 }
 
 export class EventRequestMessageV1 extends EventRequestMessage {
@@ -450,26 +239,6 @@ export class EventRequestMessageV1 extends EventRequestMessage {
     response_mode: RenderMode;
     restore_link: string;
     skipcache: boolean;
-
-    constructor(data: EventRequestMessageV1) {
-        super(data);
-        this.cart = data.cart;
-        this.cart_hash = data.cart_hash;
-        this.cart_popup = data.cart_popup;
-        this.coupon_campaign = data.coupon_campaign;
-        this.coupon_code = data.coupon_code;
-        this.coupon_used = data.coupon_used;
-        this.current_price_variant = data.current_price_variant;
-        this.current_variant_id = data.current_variant_id;
-        this.customer = data.customer;
-        this.debug_token = data.debug_token;
-        this.event_date = data.event_date;
-        this.experiments = data.experiments;
-        this.ref = data.ref;
-        this.response_mode = data.response_mode;
-        this.restore_link = data.restore_link;
-        this.skipcache = data.skipcache;
-    }
 }
 
 export class EventResponseMessage extends PublicJacksonBean {
@@ -494,31 +263,6 @@ export class EventResponseMessage extends PublicJacksonBean {
     recommendations: { [index: string]: any };
     se: SegmentsResponseBean;
     visit: string;
-
-    constructor(data: EventResponseMessage) {
-        super(data);
-        this.af = data.af;
-        this.cdc = data.cdc;
-        this.cmpid = data.cmpid;
-        this.cpr = data.cpr;
-        this.cs = data.cs;
-        this.ct = data.ct;
-        this.customer = data.customer;
-        this.debug = data.debug;
-        this.ed = data.ed;
-        this.errors = data.errors;
-        this.fb = data.fb;
-        this.ga = data.ga;
-        this.gl = data.gl;
-        this.he = data.he;
-        this.hiic = data.hiic;
-        this.js = data.js;
-        this.nc = data.nc;
-        this.pv = data.pv;
-        this.recommendations = data.recommendations;
-        this.se = data.se;
-        this.visit = data.visit;
-    }
 }
 
 export class Experiment extends PublicJacksonBean {
@@ -527,15 +271,6 @@ export class Experiment extends PublicJacksonBean {
     name: string;
     variation: string;
     variation_name: string;
-
-    constructor(data: Experiment) {
-        super(data);
-        this.id = data.id;
-        this.id_stamp = data.id_stamp;
-        this.name = data.name;
-        this.variation = data.variation;
-        this.variation_name = data.variation_name;
-    }
 }
 
 export class FacebookData {
@@ -543,32 +278,15 @@ export class FacebookData {
     e: AbstractFacebookPixelEvent<any>[];
     p: string;
     s: string[];
-
-    constructor(data: FacebookData) {
-        this.a = data.a;
-        this.e = data.e;
-        this.p = data.p;
-        this.s = data.s;
-    }
 }
 
 export class ForcedTestDTO {
     t: TestId;
     v: string;
-
-    constructor(data: ForcedTestDTO) {
-        this.t = data.t;
-        this.v = data.v;
-    }
 }
 
 export class GoogleAnalyticsData extends PublicJacksonBean {
     s: string[];
-
-    constructor(data: GoogleAnalyticsData) {
-        super(data);
-        this.s = data.s;
-    }
 }
 
 export interface Iterable<T> {
@@ -640,16 +358,6 @@ export class ObjectId implements Comparable<ObjectId>, Serializable {
     time: number;
     time_second: number;
     timestamp: number;
-
-    constructor(data: ObjectId) {
-        this.date = data.date;
-        this.inc = data.inc;
-        this.machine = data.machine;
-        this.new = data.new;
-        this.time = data.time;
-        this.time_second = data.time_second;
-        this.timestamp = data.timestamp;
-    }
 }
 
 export class OrderCustomer extends PublicJacksonBean implements OrderInfoFields {
@@ -666,23 +374,6 @@ export class OrderCustomer extends PublicJacksonBean implements OrderInfoFields 
     post_code: string;
     type: string;
     zip_code: string;
-
-    constructor(data: OrderCustomer) {
-        super(data);
-        this.country = data.country;
-        this.country_code = data.country_code;
-        this.customer_reference = data.customer_reference;
-        this.email = data.email;
-        this.first_name = data.first_name;
-        this.last_name = data.last_name;
-        this.newsletter = data.newsletter;
-        this.order_number = data.order_number;
-        this.phone = data.phone;
-        this.phone_number = data.phone_number;
-        this.post_code = data.post_code;
-        this.type = data.type;
-        this.zip_code = data.zip_code;
-    }
 }
 
 export interface OrderInfoFields extends CustomerData {
@@ -702,24 +393,9 @@ export class PartialVariant implements NostoVariation, Serializable {
     product: Product;
     variant_id: string;
     variation_id: string;
-
-    constructor(data: PartialVariant) {
-        this.availability = data.availability;
-        this.list_price = data.list_price;
-        this.price = data.price;
-        this.price_currency_code = data.price_currency_code;
-        this.price_text = data.price_text;
-        this.product = data.product;
-        this.variant_id = data.variant_id;
-        this.variation_id = data.variation_id;
-    }
 }
 
 export class PlacementId extends NostoIdentifierObjectId<PlacementId> {
-
-    constructor(data: PlacementId) {
-        super(data);
-    }
 }
 
 export class PopupTriggerSettingsDTO {
@@ -730,16 +406,6 @@ export class PopupTriggerSettingsDTO {
     name: string;
     ordinal: number;
     popup_id: string;
-
-    constructor(data: PopupTriggerSettingsDTO) {
-        this.condition = data.condition;
-        this.effect = data.effect;
-        this.enabled = data.enabled;
-        this.id = data.id;
-        this.name = data.name;
-        this.ordinal = data.ordinal;
-        this.popup_id = data.popup_id;
-    }
 }
 
 export class Product implements Serializable, Iterable<PartialVariant>, NostoProduct {
@@ -786,61 +452,10 @@ export class Product implements Serializable, Iterable<PartialVariant>, NostoPro
     variant_id: string;
     variation_id: string;
     variations: { [index: string]: PartialVariant };
-
-    constructor(data: Product) {
-        this.age_group = data.age_group;
-        this.alternate_image_urls = data.alternate_image_urls;
-        this.availability = data.availability;
-        this.brand = data.brand;
-        this.categories = data.categories;
-        this.category = data.category;
-        this.category_ids = data.category_ids;
-        this.condition = data.condition;
-        this.created = data.created;
-        this.custom_fields = data.custom_fields;
-        this.date_created = data.date_created;
-        this.date_published = data.date_published;
-        this.description = data.description;
-        this.gender = data.gender;
-        this.google_category = data.google_category;
-        this.gtin = data.gtin;
-        this.image_url = data.image_url;
-        this.inventory_level = data.inventory_level;
-        this.list_price = data.list_price;
-        this.name = data.name;
-        this.partial_variants = data.partial_variants;
-        this.price = data.price;
-        this.price_currency_code = data.price_currency_code;
-        this.price_text = data.price_text;
-        this.product = data.product;
-        this.product_id = data.product_id;
-        this.rating_value = data.rating_value;
-        this.review_count = data.review_count;
-        this.scores = data.scores;
-        this.skus = data.skus;
-        this.supplier_cost = data.supplier_cost;
-        this.tags1 = data.tags1;
-        this.tags2 = data.tags2;
-        this.tags3 = data.tags3;
-        this.thumb_url = data.thumb_url;
-        this.unit_pricing_base_measure = data.unit_pricing_base_measure;
-        this.unit_pricing_measure = data.unit_pricing_measure;
-        this.unit_pricing_unit = data.unit_pricing_unit;
-        this.updated = data.updated;
-        this.url = data.url;
-        this.variant_id = data.variant_id;
-        this.variation_id = data.variation_id;
-        this.variations = data.variations;
-    }
 }
 
 export class ProductPushResponse extends PublicJacksonBean {
     messages: string[];
-
-    constructor(data: ProductPushResponse) {
-        super(data);
-        this.messages = data.messages;
-    }
 }
 
 export class ProductSKU implements NostoSku, Serializable {
@@ -855,26 +470,9 @@ export class ProductSKU implements NostoSku, Serializable {
     price: number;
     product: Product;
     url: string;
-
-    constructor(data: ProductSKU) {
-        this.availability = data.availability;
-        this.custom_fields = data.custom_fields;
-        this.gtin = data.gtin;
-        this.id = data.id;
-        this.image_url = data.image_url;
-        this.inventory_level = data.inventory_level;
-        this.list_price = data.list_price;
-        this.name = data.name;
-        this.price = data.price;
-        this.product = data.product;
-        this.url = data.url;
-    }
 }
 
 export class ProductScores {
-
-    constructor(data: ProductScores) {
-    }
 }
 
 export class PushedCustomer extends PublicJacksonBean {
@@ -888,20 +486,6 @@ export class PushedCustomer extends PublicJacksonBean {
     source: string;
     source_id: string;
     type: string;
-
-    constructor(data: PushedCustomer) {
-        super(data);
-        this.customer_reference = data.customer_reference;
-        this.email = data.email;
-        this.first_name = data.first_name;
-        this.hcid = data.hcid;
-        this.last_name = data.last_name;
-        this.newsletter = data.newsletter;
-        this.order_number = data.order_number;
-        this.source = data.source;
-        this.source_id = data.source_id;
-        this.type = data.type;
-    }
 }
 
 export class PushedProduct extends PublicJacksonBean implements NostoProduct {
@@ -944,49 +528,6 @@ export class PushedProduct extends PublicJacksonBean implements NostoProduct {
     variant_id: string;
     variation_id: string;
     variations: { [index: string]: PushedVariation };
-
-    constructor(data: PushedProduct) {
-        super(data);
-        this.age_group = data.age_group;
-        this.alternate_image_urls = data.alternate_image_urls;
-        this.availability = data.availability;
-        this.brand = data.brand;
-        this.categories = data.categories;
-        this.category = data.category;
-        this.category_id = data.category_id;
-        this.category_ids = data.category_ids;
-        this.condition = data.condition;
-        this.custom_fields = data.custom_fields;
-        this.date_published = data.date_published;
-        this.description = data.description;
-        this.gender = data.gender;
-        this.google_category = data.google_category;
-        this.gtin = data.gtin;
-        this.image_url = data.image_url;
-        this.inventory_level = data.inventory_level;
-        this.list_price = data.list_price;
-        this.name = data.name;
-        this.partial_variants = data.partial_variants;
-        this.price = data.price;
-        this.price_currency_code = data.price_currency_code;
-        this.price_text = data.price_text;
-        this.product_id = data.product_id;
-        this.rating_value = data.rating_value;
-        this.review_count = data.review_count;
-        this.skus = data.skus;
-        this.supplier_cost = data.supplier_cost;
-        this.tags1 = data.tags1;
-        this.tags2 = data.tags2;
-        this.tags3 = data.tags3;
-        this.thumb_url = data.thumb_url;
-        this.unit_pricing_base_measure = data.unit_pricing_base_measure;
-        this.unit_pricing_measure = data.unit_pricing_measure;
-        this.unit_pricing_unit = data.unit_pricing_unit;
-        this.url = data.url;
-        this.variant_id = data.variant_id;
-        this.variation_id = data.variation_id;
-        this.variations = data.variations;
-    }
 }
 
 export class PushedProductSKU extends JacksonBean implements NostoSku {
@@ -1000,20 +541,6 @@ export class PushedProductSKU extends JacksonBean implements NostoSku {
     name: string;
     price: number;
     url: string;
-
-    constructor(data: PushedProductSKU) {
-        super(data);
-        this.availability = data.availability;
-        this.custom_fields = data.custom_fields;
-        this.gtin = data.gtin;
-        this.id = data.id;
-        this.image_url = data.image_url;
-        this.inventory_level = data.inventory_level;
-        this.list_price = data.list_price;
-        this.name = data.name;
-        this.price = data.price;
-        this.url = data.url;
-    }
 }
 
 export class PushedVariation extends PublicJacksonBean implements NostoVariant {
@@ -1022,15 +549,6 @@ export class PushedVariation extends PublicJacksonBean implements NostoVariant {
     price: number;
     price_currency_code: string;
     price_text: string;
-
-    constructor(data: PushedVariation) {
-        super(data);
-        this.availability = data.availability;
-        this.list_price = data.list_price;
-        this.price = data.price;
-        this.price_currency_code = data.price_currency_code;
-        this.price_text = data.price_text;
-    }
 }
 
 export class RawEvent extends PublicJacksonBean {
@@ -1038,14 +556,6 @@ export class RawEvent extends PublicJacksonBean {
     refSrc: string;
     target: string;
     type: string;
-
-    constructor(data: RawEvent) {
-        super(data);
-        this.ref = data.ref;
-        this.refSrc = data.refSrc;
-        this.target = data.target;
-        this.type = data.type;
-    }
 }
 
 export interface RawEvents {
@@ -1053,28 +563,14 @@ export interface RawEvents {
 }
 
 export class SegmentId extends NostoIdentifierObjectId<SegmentId> {
-
-    constructor(data: SegmentId) {
-        super(data);
-    }
 }
 
 export class SegmentInfoBean extends JacksonBean {
     id: string;
-
-    constructor(data: SegmentInfoBean) {
-        super(data);
-        this.id = data.id;
-    }
 }
 
 export class SegmentsResponseBean extends PublicJacksonBean {
     active_segments: SegmentInfoBean[];
-
-    constructor(data: SegmentsResponseBean) {
-        super(data);
-        this.active_segments = data.active_segments;
-    }
 }
 
 export interface Serializable {
@@ -1082,40 +578,20 @@ export interface Serializable {
 
 export class ShopifyRef extends PublicJacksonBean {
     token: string;
-
-    constructor(data: ShopifyRef) {
-        super(data);
-        this.token = data.token;
-    }
 }
 
 export class TestId extends CampaignId<TestId> {
-
-    constructor(data: TestId) {
-        super(data);
-    }
 }
 
 export class TestPreviewsDTO {
     d?: ForcedTestDTO;
     t: ForcedTestDTO[];
     u?: any;
-
-    constructor(data: TestPreviewsDTO) {
-        this.d = data.d;
-        this.t = data.t;
-        this.u = data.u;
-    }
 }
 
 export class UrlRule {
     predicate: UrlRulePredicate;
     value: string;
-
-    constructor(data: UrlRule) {
-        this.predicate = data.predicate;
-        this.value = data.value;
-    }
 }
 
 export interface Validated {
@@ -1124,12 +600,6 @@ export interface Validated {
 export class ValidationError extends PublicJacksonBean {
     key: string;
     message: string;
-
-    constructor(data: ValidationError) {
-        super(data);
-        this.key = data.key;
-        this.message = data.message;
-    }
 }
 
 export class Variant extends PartialVariant {
@@ -1162,39 +632,6 @@ export class Variant extends PartialVariant {
     unit_pricing_unit: string;
     updated: Date;
     url: string;
-
-    constructor(data: Variant) {
-        super(data);
-        this.age_group = data.age_group;
-        this.alternate_image_urls = data.alternate_image_urls;
-        this.brand = data.brand;
-        this.category = data.category;
-        this.category_ids = data.category_ids;
-        this.condition = data.condition;
-        this.created = data.created;
-        this.custom_fields = data.custom_fields;
-        this.date_created = data.date_created;
-        this.date_published = data.date_published;
-        this.description = data.description;
-        this.gender = data.gender;
-        this.google_category = data.google_category;
-        this.gtin = data.gtin;
-        this.image_url = data.image_url;
-        this.inventory_level = data.inventory_level;
-        this.name = data.name;
-        this.rating_value = data.rating_value;
-        this.review_count = data.review_count;
-        this.supplier_cost = data.supplier_cost;
-        this.tags1 = data.tags1;
-        this.tags2 = data.tags2;
-        this.tags3 = data.tags3;
-        this.thumb_url = data.thumb_url;
-        this.unit_pricing_base_measure = data.unit_pricing_base_measure;
-        this.unit_pricing_measure = data.unit_pricing_measure;
-        this.unit_pricing_unit = data.unit_pricing_unit;
-        this.updated = data.updated;
-        this.url = data.url;
-    }
 }
 
 export class WebsiteOrder extends PublicJacksonBean {
@@ -1205,17 +642,6 @@ export class WebsiteOrder extends PublicJacksonBean {
     order_status: string;
     order_status_label: string;
     payment_provider: string;
-
-    constructor(data: WebsiteOrder) {
-        super(data);
-        this.created_at = data.created_at;
-        this.external_order_ref = data.external_order_ref;
-        this.info = data.info;
-        this.items = data.items;
-        this.order_status = data.order_status;
-        this.order_status_label = data.order_status_label;
-        this.payment_provider = data.payment_provider;
-    }
 }
 
 export const enum OnsiteFeature {
