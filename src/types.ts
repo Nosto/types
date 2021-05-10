@@ -1,4 +1,4 @@
-// Generated using typescript-generator version 2.27.744 on 2021-01-15 11:23:50.
+// Generated using typescript-generator version 2.27.744 on 2021-05-10 14:49:26.
 
 export class AbTestPreviewSettingsBase<T> {
     id: TestId;
@@ -198,7 +198,6 @@ export class DebugToolbarDataDTO {
     recommendationCampaigns: RecommendationDebugDTO[];
     richSegmentsTab: boolean;
     runningTests: AbTestPreviewSettingsDTO[];
-    schedulesTab: boolean;
     segments: SegmentDebugDTO[];
     showImprovedCampaignOverlayData: boolean;
     showTestsTab: boolean;
@@ -207,13 +206,10 @@ export class DebugToolbarDataDTO {
 export class DynamicPlacementDTO {
     cssSelector: string;
     enabled: boolean;
-    excludedPageIds: string[];
+    filters: FilterRule[];
     id: string;
-    includedPageIds: string[];
     mode: string;
     preserveClassAttribute: boolean;
-    urlRules: UrlRule[];
-    urls: string[];
 }
 
 export class Effect {
@@ -225,11 +221,12 @@ export class Effect {
 export class EventRequestMessage extends PublicJacksonBean implements RawEvents {
     cart_cookie_hash: string;
     cart_product_ids: string[];
-    cart_total_price: number;
+    cart_total_price?: number;
     cart_total_size: number;
     categories: string[];
     category_ids: string[];
     current_variant: string;
+    custom_fields: { [index: string]: string[] };
     customer_reference: string;
     date: Date;
     debug?: DebugRequestParamsDTO;
@@ -243,40 +240,12 @@ export class EventRequestMessage extends PublicJacksonBean implements RawEvents 
     recotrace: string;
     reference: string;
     referrer: string;
-    render_mode: RenderMode;
+    render_mode?: RenderMode;
     segment_codes: string[];
     show_cart_popup_recommendations: boolean;
     sort_order: string;
     tags: string[];
-    customFields: any;
     url: string;
-}
-
-export class EventRequestMessageV0 extends EventRequestMessage {
-    catids: string[];
-    cats: string[];
-    ch: string;
-    cids: string[];
-    cpr: boolean;
-    cpv: string;
-    cr: string;
-    cs: number;
-    ct: number;
-    cv: string;
-    dt: string;
-    ed: Date;
-    el: string[];
-    ev: string[][];
-    m: string;
-    mt: string;
-    ptp: PageType;
-    ref: string;
-    rm: RenderMode;
-    rt: string;
-    sc: string[];
-    skipcache: boolean;
-    skus: string[];
-    so: string;
 }
 
 export class EventRequestMessageV1 extends EventRequestMessage {
@@ -293,7 +262,7 @@ export class EventRequestMessageV1 extends EventRequestMessage {
     event_date: Date;
     experiments: Experiment[];
     ref: string;
-    response_mode: RenderMode;
+    response_mode?: RenderMode;
     restore_link: string;
     skipcache: boolean;
 }
@@ -337,6 +306,13 @@ export class FacebookData {
     s: string[];
 }
 
+export class FilterRule {
+    field: string;
+    negate: boolean;
+    operator: FilterOperator;
+    values: any[];
+}
+
 export class ForcedTestDTO {
     t: TestId;
     v: string;
@@ -344,9 +320,6 @@ export class ForcedTestDTO {
 
 export class GoogleAnalyticsData extends PublicJacksonBean {
     s: string[];
-}
-
-export interface Iterable<T> {
 }
 
 export interface NostoProduct extends NostoVariant {
@@ -365,7 +338,7 @@ export interface NostoProduct extends NostoVariant {
     image_url: string;
     inventory_level: number;
     name: string;
-    partial_variants: { [index: string]: PartialVariant };
+    partial_variants: { [index: string]: NostoVariant };
     product_id: string;
     rating_value: number;
     review_count: number;
@@ -397,14 +370,12 @@ export interface NostoSku extends Validated {
 
 export interface NostoVariant extends Validated {
     availability: string;
+    available: boolean;
+    discounted: boolean;
     list_price: number;
     price: number;
     price_currency_code: string;
     price_text: string;
-}
-
-export interface NostoVariation extends NostoVariant {
-    variant_id: string;
 }
 
 export class OrderCustomer extends PublicJacksonBean implements OrderInfoFields {
@@ -429,17 +400,6 @@ export interface OrderInfoFields extends CustomerData {
     phone_number: string;
     type: string;
     zip_code: string;
-}
-
-export class PartialVariant implements NostoVariation, Serializable {
-    availability: string;
-    list_price: number;
-    price: number;
-    price_currency_code: string;
-    price_text: string;
-    product: Product;
-    variant_id: string;
-    variation_id: string;
 }
 
 export class PlacementDebugDTO {
@@ -481,71 +441,8 @@ export class PopupTriggerSettingsDTO {
     popup_id: string;
 }
 
-export class Product implements Serializable, Iterable<PartialVariant>, NostoProduct {
-    age_group: string;
-    alternate_image_urls: string[];
-    availability: string;
-    brand: string;
-    categories: string[];
-    category: string[];
-    category_ids: string[];
-    condition: string;
-    created: Date;
-    custom_fields: { [index: string]: string };
-    date_created: Date;
-    date_published: Date;
-    description: string;
-    gender: string;
-    google_category: string;
-    gtin: string;
-    image_url: string;
-    inventory_level: number;
-    list_price: number;
-    name: string;
-    partial_variants: { [index: string]: PartialVariant };
-    price: number;
-    price_currency_code: string;
-    price_text: string;
-    product: Product;
-    product_id: string;
-    rating_value: number;
-    review_count: number;
-    scores: ProductScores;
-    skus: ProductSKU[];
-    supplier_cost: number;
-    tags1: string[];
-    tags2: string[];
-    tags3: string[];
-    thumb_url: string;
-    unit_pricing_base_measure: number;
-    unit_pricing_measure: number;
-    unit_pricing_unit: string;
-    updated: Date;
-    url: string;
-    variant_id: string;
-    variation_id: string;
-    variations: { [index: string]: PartialVariant };
-}
-
 export class ProductPushResponse extends PublicJacksonBean {
     messages: string[];
-}
-
-export class ProductSKU implements NostoSku, Serializable {
-    availability: string;
-    custom_fields: { [index: string]: string };
-    gtin: string;
-    id: string;
-    image_url: string;
-    inventory_level: number;
-    list_price: number;
-    name: string;
-    price: number;
-    product: Product;
-    url: string;
-}
-
-export class ProductScores {
 }
 
 export class PushedCustomer extends PublicJacksonBean {
@@ -565,6 +462,7 @@ export class PushedProduct extends PublicJacksonBean implements NostoProduct {
     age_group: string;
     alternate_image_urls: string[];
     availability: string;
+    available: boolean;
     brand: string;
     categories: string[];
     category: string[];
@@ -574,6 +472,7 @@ export class PushedProduct extends PublicJacksonBean implements NostoProduct {
     custom_fields: { [index: string]: string };
     date_published: Date;
     description: string;
+    discounted: boolean;
     gender: string;
     google_category: string;
     gtin: string;
@@ -581,7 +480,7 @@ export class PushedProduct extends PublicJacksonBean implements NostoProduct {
     inventory_level: number;
     list_price: number;
     name: string;
-    partial_variants: { [index: string]: PartialVariant };
+    partial_variants: { [index: string]: NostoVariant };
     price: number;
     price_currency_code: string;
     price_text: string;
@@ -618,6 +517,8 @@ export class PushedProductSKU extends JacksonBean implements NostoSku {
 
 export class PushedVariation extends PublicJacksonBean implements NostoVariant {
     availability: string;
+    available: boolean;
+    discounted: boolean;
     list_price: number;
     price: number;
     price_currency_code: string;
@@ -710,49 +611,12 @@ export class UnsavedDraftPreviewSettingsDTO extends AbTestPreviewSettingsBase<Va
     variations: VariationWithRulesDTO[];
 }
 
-export class UrlRule {
-    predicate: UrlRulePredicate;
-    value: string;
-}
-
 export interface Validated {
 }
 
 export class ValidationError extends PublicJacksonBean {
     key: string;
     message: string;
-}
-
-export class Variant extends PartialVariant {
-    age_group: string;
-    alternate_image_urls: string[];
-    brand: string;
-    category: string[];
-    category_ids: string[];
-    condition: string;
-    created: Date;
-    custom_fields: { [index: string]: string };
-    date_created: Date;
-    date_published: Date;
-    description: string;
-    gender: string;
-    google_category: string;
-    gtin: string;
-    image_url: string;
-    inventory_level: number;
-    name: string;
-    rating_value: number;
-    review_count: number;
-    supplier_cost: number;
-    tags1: string[];
-    tags2: string[];
-    tags3: string[];
-    thumb_url: string;
-    unit_pricing_base_measure: number;
-    unit_pricing_measure: number;
-    unit_pricing_unit: string;
-    updated: Date;
-    url: string;
 }
 
 export class VariationWithRulesDTO extends AbTestVariationDTO {
@@ -767,6 +631,15 @@ export class WebsiteOrder extends PublicJacksonBean {
     order_status: string;
     order_status_label: string;
     payment_provider: string;
+}
+
+export const enum FilterOperator {
+    INCLUDES = "INCLUDES",
+    IS = "IS",
+    CONTAINS = "CONTAINS",
+    MATCHES_REGEXP_PATTERN = "MATCHES_REGEXP_PATTERN",
+    AND = "AND",
+    OR = "OR",
 }
 
 export const enum Method {
@@ -818,12 +691,4 @@ export const enum TargetType {
     ONSITE_CONTENT = "ONSITE_CONTENT",
     AB_TEST = "AB_TEST",
     HIDE_CONTENT = "HIDE_CONTENT",
-}
-
-export const enum UrlRulePredicate {
-    IS = "IS",
-    IS_NOT = "IS_NOT",
-    CONTAINS = "CONTAINS",
-    DOES_NOT_CONTAIN = "DOES_NOT_CONTAIN",
-    MATCHES_REGEXP_PATTERN = "MATCHES_REGEXP_PATTERN",
 }
