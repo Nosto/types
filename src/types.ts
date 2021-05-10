@@ -248,6 +248,7 @@ export class EventRequestMessage extends PublicJacksonBean implements RawEvents 
     show_cart_popup_recommendations: boolean;
     sort_order: string;
     tags: string[];
+    customFields: any;
     url: string;
 }
 
